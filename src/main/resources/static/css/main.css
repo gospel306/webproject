@@ -1,0 +1,77 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.Main {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    min-height: 700px;
+    /* border: 1px solid black; */
+}
+
+.nav-wrapper {
+    background-color: rgb(68, 167, 5);
+    padding-left: 10px;
+}
+
+.brand-logo {
+    padding-left: 20px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+}
+
+.Main__Search {
+    min-height: 250px;
+    font-family: 'Do Hyeon', sans-serif;
+}
+
+.Main__TextBox {
+    background-image: url('https://images.unsplash.com/45/eDLHCtzRR0yfFtU0BQar_sylwiabartyzel_themap.jpg?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=757&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 250px;
+    padding: 50px;
+}
+
+.input__wrapper {
+    margin-top: 50px;
+    background-color: white;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    opacity: 0.6;
+    border-radius: 10px;
+}
+
+.Main__Username {
+    color: darkslategrey;
+}
+
+.Main__Location {
+    color: darkslategrey;
+}
+
+.Main__Distance {
+    color: darkslategrey;
+}
+
+.range-field {
+    max-width: 250px;
+}
+
+.Main__TextTop {
+    font-size: 1.5rem;
+}
+
+.Main__TextBottom {
+    font-size: 2.2rem;
+}
+
+.range-field {
+    text-align: center;
+}
