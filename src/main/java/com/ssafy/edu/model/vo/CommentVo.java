@@ -1,6 +1,7 @@
 package com.ssafy.edu.model.vo;
 
 public class CommentVo {
+	private int comment_no;
 	private String text;
 	private String id;
 	private String num;
@@ -9,8 +10,9 @@ public class CommentVo {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public CommentVo(String text, String id, String num, String time_Stamp) {
+	public CommentVo(int comment_no,String text, String id, String num, String time_Stamp) {
 		super();
+		this.comment_no = comment_no;
 		this.text = text;
 		this.id = id;
 		this.num = num;
