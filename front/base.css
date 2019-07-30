@@ -1,0 +1,17 @@
+body {
+
+}
+
+.wrapper {
+    border: 1px solid black;
+    width: 100%;
+    min-height: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media(min-width: 720px) {
+    .wrapper {
+        width: 65%;
+    }
+}
