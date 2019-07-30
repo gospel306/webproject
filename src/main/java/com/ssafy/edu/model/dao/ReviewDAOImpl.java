@@ -6,6 +6,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.ssafy.edu.model.mapper.ReviewMapper;
 import com.ssafy.edu.model.vo.CommentVo;
 import com.ssafy.edu.model.vo.ReviewVo;
 
@@ -66,5 +67,4 @@ public class ReviewDAOImpl implements IReviewDAO{
 		ReviewMapper mapper = template.getMapper(ReviewMapper.class);
 		return mapper.getCommentByTour(contentId);
 	}
-
 }

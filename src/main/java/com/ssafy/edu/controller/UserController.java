@@ -35,6 +35,8 @@ public class UserController {
 		mv.setViewName("member");
 		return mv;
 	}
-	
-	
+	@RequestMapping(value = "/delete")
+	public void deleteUser(String id) {
+		user_service.deleteUser(id);
+	}
 }

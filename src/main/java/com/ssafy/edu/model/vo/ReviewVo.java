@@ -5,12 +5,16 @@ public class ReviewVo {
 	private String title;
 	private String content;
 	private String time_Stamp;
-	public ReviewVo(int num, String title, String content, String time_Stamp) {
+	private String id;
+	private int contentid;
+	public ReviewVo(int num, String title, String content, String time_Stamp,String id,int contentid) {
 		super();
 		this.num = num;
 		this.title = title;
 		this.content = content;
 		this.time_Stamp = time_Stamp;
+		this.id = id;
+		this.contentid = contentid;
 	}
 	public ReviewVo() {
 		super();
@@ -39,6 +43,18 @@ public class ReviewVo {
 	}
 	public void setTime_Stamp(String time_Stamp) {
 		this.time_Stamp = time_Stamp;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public int getContentid() {
+		return contentid;
+	}
+	public void setContentid(int contentid) {
+		this.contentid = contentid;
 	}
 	@Override
 	public String toString() {

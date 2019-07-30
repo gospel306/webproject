@@ -24,7 +24,7 @@ public class ReviewController {
 	@RequestMapping(value = "/member")
 	public MemberVO selectMemberById() {
 		String mem_id = "loucks";
-		return mem_service.selectMemberById(mem_id);
+		return mem_service.selectMemberByID(mem_id);
 	}
 	
 	//html을 정해주는 method
