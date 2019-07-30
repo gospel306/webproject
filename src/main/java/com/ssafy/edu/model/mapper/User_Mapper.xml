@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gongsurae.awesomeplace.mapper.MemberMapper">
+	
+	<!-- 회원 아이디로 회원 조회 -->
+	<select id="getUserById" 
+	parameterType = "java.lang.String"
+	resultType="com.gongsurae.awesomeplace.vo.UserVO">
+		SELECT * 
+		FROM MEMBER 
+		WHERE ID = #{id}
+	</select>
+	<select id="getUserList" resultType="com.gongsurae.awesomeplace.vo.UserVO">
+		SELECT ID, NICKNAME, EMAIL 
+		FROM MEMBER
+	</select>
+	<insert id="insertUser" parameterType="com.gongsurae.awesomeplace.vo.UserVO">
+		INSERT INTO USER (ID,PASSWORD,PHONENUM,EMAIL,MEMBERTYPE,NICKNAME,IMAGE)
+		VALUES(#{id},#{password},#{phoneNum},#{email},#{memberType},#{nickname},#{image})
+	</insert>
+	<update id="updateUser" parameterType="com.gongsurae.awesomeplace.vo.UserVO">
+		UPDATE USER
+		SET PASSWORD = #{password}, PHONENUM = #{phoneNum}, EMAIL = #{email}, MEMBERTYPE = #{memberType}, NICKNAME = #{nickname}, IMAGE = #{image}
+		WHERE ID = #{id}
+	</update>
+	<delete id="deleteUser" parameterType="java.lang.String">
+		DELETE FROM USER
+		WHERE ID = #{id}
+	</delete>
+</mapper>
