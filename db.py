@@ -12,7 +12,7 @@ res = requests.get(URL)
 respon = res.json()
 for i in range(25344):
     print('i = {}'.format(i))
-    temp = respon['response']['body']['items']['item'][i+1081]  # 1081 까지 했음
+    temp = respon['response']['body']['items']['item'][i+2413]  # 2413 까지 했음
     if "addr1" in temp:
         add = temp['addr1']
         if "addr2" in temp:
