@@ -19,4 +19,5 @@ public interface UserMapper {
 	//ID,PW로 회원정보 반환
 	UserVo getUserById(HashMap<String,String> info);
 	
+	String getMemberType(String id);
 }
