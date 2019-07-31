@@ -4,7 +4,7 @@
 	
 	<!-- 회원 아이디로 회원 조회 -->
 	<select id="getUserById" 
-	parameterType = ""
+	parameterType = "map"
 	resultType="com.ssafy.edu.model.vo.UserVo">
 		SELECT * 
 		FROM MEMBER 
@@ -13,6 +13,12 @@
 	<select id="getUserList" resultType="com.ssafy.edu.model.vo.UserVo">
 		SELECT ID, NICKNAME, EMAIL 
 		FROM MEMBER
+	</select>
+	<select id="getMemberType" parameterType="java.lang.String"
+	resultType="java.lang.String">
+		SELECT MEMBERTYPE
+		FROM MEMBER
+		WHERE ID = #{id}
 	</select>
 	<insert id="insertUser" parameterType="com.ssafy.edu.model.vo.UserVo">
 		INSERT INTO USER (ID,PASSWORD,PHONENUM,EMAIL,MEMBERTYPE,NICKNAME,IMAGE)

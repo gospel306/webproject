@@ -48,5 +48,9 @@ public class UserDAOImpl implements IUserDAO{
 		UserMapper mapper=template.getMapper(UserMapper.class);
 		return mapper.getUserById(info);
 	}
-
+	@Override
+	public String getMemberType(String id) {
+		UserMapper mapper = template.getMapper(UserMapper.class);
+		return mapper.getMemberType(id);
+	}
 }

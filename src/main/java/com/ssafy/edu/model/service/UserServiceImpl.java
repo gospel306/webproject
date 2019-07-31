@@ -43,5 +43,10 @@ public class UserServiceImpl implements IUserService{
 		// TODO Auto-generated method stub
 		return dao.getUserById(id, password);
 	}
+	
+	@Override
+	public String getMemberType(String id) {
+		return dao.getMemberType(id);
+	}
 
 }
