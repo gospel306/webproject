@@ -4,9 +4,9 @@
 	
 	<!-- 회원 아이디로 회원 조회 -->
 	<select id="getUserById" 
-	parameterType = "map"
+	parameterType = "java.util.HashMap"
 	resultType="com.ssafy.edu.model.vo.UserVo">
-		SELECT * 
+		SELECT ID,PHONENUM,EMAIL,MEMBERTYPE,NICKNAME,IMAGE
 		FROM MEMBER 
 		WHERE ID = #{id} AND PASSWORD = #{password}
 	</select>
@@ -21,16 +21,16 @@
 		WHERE ID = #{id}
 	</select>
 	<insert id="insertUser" parameterType="com.ssafy.edu.model.vo.UserVo">
-		INSERT INTO USER (ID,PASSWORD,PHONENUM,EMAIL,MEMBERTYPE,NICKNAME,IMAGE)
+		INSERT INTO MEMBER (ID,PASSWORD,PHONENUM,EMAIL,MEMBERTYPE,NICKNAME,IMAGE)
 		VALUES(#{id},#{password},#{phoneNum},#{email},#{memberType},#{nickname},#{image})
 	</insert>
 	<update id="updateUser" parameterType="com.ssafy.edu.model.vo.UserVo">
-		UPDATE USER
+		UPDATE MEMBER
 		SET PASSWORD = #{password}, PHONENUM = #{phoneNum}, EMAIL = #{email}, MEMBERTYPE = #{memberType}, NICKNAME = #{nickname}, IMAGE = #{image}
 		WHERE ID = #{id}
 	</update>
 	<delete id="deleteUser" parameterType="java.lang.String">
-		DELETE FROM USER
+		DELETE FROM MEMBER
 		WHERE ID = #{id}
 	</delete>
 </mapper>

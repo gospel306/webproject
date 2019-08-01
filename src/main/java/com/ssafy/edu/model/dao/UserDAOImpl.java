@@ -2,6 +2,7 @@ package com.ssafy.edu.model.dao;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +45,8 @@ public class UserDAOImpl implements IUserDAO{
 	@Override
 	public com.ssafy.edu.model.vo.UserVo getUserById(String id, String password) {
 		HashMap<String, String> info = new HashMap<String, String>();
-		info.put(id, password);
+		info.put("id", id);
+		info.put("password",password);
 		UserMapper mapper=template.getMapper(UserMapper.class);
 		return mapper.getUserById(info);
 	}

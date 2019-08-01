@@ -28,7 +28,7 @@ public class UserController {
 	@RequestMapping(value = "join.do",method = RequestMethod.POST)
 	public String insertUser(@ModelAttribute("userVo") UserVo userVo,RedirectAttributes rttr) throws Exception{
 		user_service.insertUser(userVo);
-		return null;
+		return "member/home";
 	}
 	//회원탈퇴
 	@RequestMapping(value = "withdrawal.do",method = RequestMethod.GET)
@@ -38,7 +38,7 @@ public class UserController {
 		return null;
 	}
 	//관리자: 회원정보들 열람
-	@RequestMapping(value = "/getUserList",method = RequestMethod.GET)
+	@RequestMapping(value = "getUserList.do",method = RequestMethod.GET)
 	public String getUserList(Model model) throws Exception{
 		logger.info("getUserList()....");
 		model.addAttribute("userList",user_service.getUserList());
@@ -58,7 +58,15 @@ public class UserController {
 	@RequestMapping(value = "login.do",method = RequestMethod.GET)
 	public String getUserById(Model model,HttpSession session,String id,String password)throws Exception{
 		logger.info("login");
-		
-		return null;
+		UserVo u = user_service.getUserById(id, password);
+		if(u!=null) {
+			logger.info("success");
+			session.setAttribute("id", u.getId());
+			session.setAttribute("alias", u.getNickname());
+			return "member/home";
+		}else {
+			logger.info("Fail");
+			return "main.do";
+		}
 	}
 }
