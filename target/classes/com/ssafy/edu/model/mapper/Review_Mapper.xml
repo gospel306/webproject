@@ -3,7 +3,7 @@
 <mapper namespace="com.ssafy.edu.model.mapper.ReviewMapper">
 	
 	<!-- 회원 아이디로 회원 조회 -->
-	<insert id="insertReview" parameterType="com.ssafy.edu.model.vo.ReviewVo">
+	<insert id="insertReview" parameterType="ReviewVo">
 		INSERT INTO REVIEW(TITLE,CONTENT,TIME_STAMP,ID,CONTENTID)
 		VALUES(#{title},#{content},#{time_Stamp},#{id},#{contentid})
 	</insert>
@@ -11,22 +11,22 @@
 		DELETE FROM REVIEW
 		WHERE NUM = #{num}
 	</delete>
-	<update id="updateReview" parameterType="com.ssafy.edu.model.vo.ReviewVo">
+	<update id="updateReview" parameterType="ReviewVo">
 		UPDATE REVIEW
 		SET TITLE=#{title},CONTENT=#{content}
 		WHERE NUM=#{num}
 	</update>
 	<select id="getReviewByTour" parameterType="java.lang.Integer"
-	resultType="com.ssay.edu.model.vo.ReviewVo">
+	resultType="ReviewVo">
 		SELECT * FROM REVIEW
 		WHERE CONTENTID=#{contentid}
 	</select>
 	<select id="getReviewByUser" parameterType="java.lang.String"
-	resultType="com.ssafy.edu.vo.ReviewVo">
+	resultType="ReviewVo">
 		SELECT * FROM REVIEW
 		WHERE ID = #{id}
 	</select>
-	<insert id="insertComment" parameterType="com.ssafy.edu.vo.CommentVo">
+	<insert id="insertComment" parameterType="CommentVo">
 		INSERT INTO REVIEW_COMMENT(TEXT,ID,NUM,TIME_STAMP)
 		VALUES(#{text},#{id},#{num},{time_Stamp})
 	</insert>
@@ -35,7 +35,7 @@
 		WHERE NUM = #{num}
 	</delete>
 	<select id="getCommentByTour" parameterType="java.lang.Integer"
-	resultType="com.ssafy.edu.vo.CommentVo">
+	resultType="CommentVo">
 		SELECT * FROM REVIEW_COMMENT
 		WHERE CONTENTID = #{contentid}
 	</select>

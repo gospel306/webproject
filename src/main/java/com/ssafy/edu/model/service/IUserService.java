@@ -16,5 +16,5 @@ public interface IUserService {
 	List<UserVo> getUserList();
 	//ID,PW로 회원정보 반환
 	UserVo getUserById(String id,String password);
-	
+	String getMemberType(String id);
 }
