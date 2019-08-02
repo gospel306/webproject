@@ -34,6 +34,9 @@ public class TourController {
 	//상세정보 불러올때 ContentTypeId값에 따라서 다르게 불러줘야함.
 	//12:TourPlace 14:Cultural 15:Festival 25:course 28:leports 32:lodgement 38:shopping 39:restaurant
 	
+	
+	
+	
 	void temp() {
 		int contenttypeid=0;
 		int contentId=0;
