@@ -61,17 +61,21 @@
                         	class="place__image"
                         	style="background-image: url('${place.image}')"
                     	></div>
+                        <div class="place__content1">
+                        	<h3 style="margin: 0;">${place.title }</h3>
+                        	<p style="margin: 0;">${place.address }</p>
+                    	</div>
                     </c:if>
                 	<c:if test="${place.image eq '' }">
                     	<div
                         	class="place__image"
                         	style="background-image: url('http://www.owlenergy.biz/images/owl_img/slide/nopicture.jpg')"
                     	></div>
-                    </c:if>
-                    	<div class="place__content">
+                        <div class="place__content2">
                         	<p style="margin: 0;">${place.title }</p>
                         	<p style="margin: 0;">${place.address }</p>
                     	</div>
+                    </c:if>                        
                     </div>
                 </c:forEach>
             </div>
