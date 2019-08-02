@@ -147,7 +147,7 @@ li.header__dropdown {
 .main__showPlacesOption {
     margin: 15px;
     font-family: 'Song Myung';
-    font-size: 16px;
+    font-size: 18px;
     text-align: center;
 }
 
@@ -259,8 +259,8 @@ input[id="availablePlaces"] {
     min-width: 130px;
     border-radius: 10px;
     position: absolute;
-    /* left: 0;
-    margin: 10px; */
+    left: 0;
+    margin: 10px;
     margin-left: auto;
     margin-right: auto;
 }
