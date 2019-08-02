@@ -14,6 +14,7 @@ import com.ssafy.edu.model.vo.MemberVO;
 @Controller
 public class MemberController {
 	
+	
 	@Autowired
 	private IMemberService member_service;
 
