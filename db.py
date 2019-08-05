@@ -6,13 +6,12 @@ from bs4 import BeautifulSoup as bs
 from selenium import webdriver
 
 tabledict = {12 :'tourplace', 14 : 'culture' , 15 :'festival', 25 : 'course', 28 : 'leports' , 32 : 'lodgment', 38 : 'shopping', 39 : 'restaurant'}
-
 URL = 'http://api.visitkorea.or.kr/openapi/service/rest/KorService/areaBasedList?ServiceKey=gAgIdPkL9wh55d59ACpjljEduRtTrvBooU9ZLJJmtESF%2Fyfe3i1F65XlDslHoWTjN10OxyuoRJXavvQpnJRLZw%3D%3D&contentTypeId=&areaCode=&sigunguCode=&cat1=&cat2=&cat3=&listYN=Y&MobileOS=ETC&MobileApp=TourAPI3.0_Guide&arrange=A&numOfRows=30000&pageNo=1&_type=json'
 res = requests.get(URL)
 respon = res.json()
 for i in range(25344):
     print('i = {}'.format(i))
-    temp = respon['response']['body']['items']['item'][i+6373] + 136
+    temp = respon['response']['body']['items']['item'][i+8811]
     if "addr1" in temp:
         add = temp['addr1']
         if "addr2" in temp:
@@ -34,8 +33,8 @@ for i in range(25344):
     driver.get(commonurl)
     html = driver.page_source
     soup = bs(html,'html.parser')
-    table = soup.find('div',class_="summary")
-    overview = str(table.find("p").get_text()).strip()
+    table2 = soup.find('div',class_="summary")
+    overview = str(table2.find("p").get_text()).strip()
     tempdict = {}
     table2 = soup.find("div",class_="txtData none").find("ul").select('li')
 
@@ -57,7 +56,6 @@ for i in range(25344):
     curs = conn.cursor()
     curs.execute(sql,val)
     print("finish place")
-
 
     infocenter, accomcount, chkbabycarriage, chkcreditcard, chkpet,parking,restdate = '','','','','','',''
     for element in table2:
