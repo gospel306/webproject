@@ -106,6 +106,24 @@
             <p style="margin: 7px;">Copyright 2019. 공수래공수거. ALL RIGTHS RESERVED.</p>
         </div>
     </div>
+
+    <script>
+        const open = document.getElementById("open");
+        const close = document.getElementById("close");
+        const modal = document.querySelector(".modal-wrapper");
+
+        open.onclick = () => {
+            modal.style.display = "flex";
+        };
+        close.onclick = () => {
+            modal.style.display = "none";
+        };
+
+        getRangeValue = (value) => {
+            const rangeValue = document.getElementById("rangeValue");
+            rangeValue.innerHTML = value;
+        }
+    </script>
 </body>
 
 </html>
