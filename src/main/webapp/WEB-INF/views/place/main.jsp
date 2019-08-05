@@ -42,6 +42,27 @@
                         근처
                         <span class="subText__distance">${distance }km</span>
                     </p>
+                    <button id="open">다른 위치에서 알아보기</button>
+                </div>
+            </div>
+            <div class="modal-wrapper" style="display: none;">
+                <div class="modal">
+                    <div class="modal-title">
+                        다른 위치에서 알아보기
+                    </div>
+                    <form>
+                        <div class="setLocation">
+
+                        </div>
+                        <div class="setDistance">
+                            <p id="rangeValue">5</p>
+                            <input id="range" type="range" name="distance" min="1" max="10" step="1" value="5" onchange="getRangeValue(value)">
+                        </div>
+                        <div class="close-wrapper">
+                            <input type="submit" value="검색">
+                            <button id="close">취소</button>
+                        </div>
+                    </form>
                 </div>
             </div>
             <div class="main__options">
