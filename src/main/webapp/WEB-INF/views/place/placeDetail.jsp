@@ -312,7 +312,7 @@
 				<!-- 사용자 리뷰 헤더 -->
 				<div class="info_header">
 					<div class="header__left">
-						<span>리뷰</span>
+						<span>사용자 후기</span>
 					</div>
 				</div>
 				<!-- 사용자 리뷰 목록 -->
@@ -323,10 +323,31 @@
 								<strong>박한범</strong>님
 							</span>
 						</div>
-						<div class="review__right">
-							Right
+						<div class="review__right" id="open" style="cursor: pointer">
+							<div class="review__content" style="float: left;">
+								<span>안녕하세요! 전 겸댕이 한범이에요. 오늘 현충원에 방문해서 호국영령들에 대한 묵념의 시간을 가지면서 뜻깊은 하루를 보냈어요. 꼭
+									방문해보세요!</span>
+							</div>
+							<div style="float: right; margin-top: 5px;">
+								<span style="font-weight: 200; font-size: 12px;">2019년 8월 7일에 방문했습니다.</span>
+							</div>
 						</div>
 					</div>
+					<div class="review">
+							<div class="review__left">
+								<span>
+									<strong>김동욱</strong>님
+								</span>
+							</div>
+							<div class="review__right" id="open" style="cursor: pointer">
+								<div class="review__content" style="float: left;">
+									<span>안녕하세요! 인공지능 개발자입니다. 4차 산업혁명 시대가 도래할 것입니다. 다들 인공지능 공부에 몰두합시다. 이상입니다.</span>
+								</div>
+								<div style="float: right; margin-top: 5px;">
+									<span style="font-weight: 200; font-size: 12px;">2097년 11월 7일에 방문했습니다.</span>
+								</div>
+							</div>
+						</div>
 				</div>
 			</div>
 
@@ -361,7 +382,18 @@
 			// 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
 			infowindow.setContent('<div style="padding:5px;font-size:12px;">' + "${tourInfo.title}" + '</div>');
 			infowindow.open(map, marker);
+		</script>
+		<script>
+			const open = document.getElementById("open");
+			const close = document.getElementById("close");
+			const modal = document.querySelector(".modal-wrapper");
 
+			open.onclick = () => {
+				modal.style.display = "flex";
+			};
+			close.onclick = () => {
+				modal.style.display = "none";
+			};
 		</script>
 
 </body>
