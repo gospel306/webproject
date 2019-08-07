@@ -152,7 +152,7 @@ li.header__dropdown {
 .modal {
     background: white;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 10px;
     width: 80%;
 }
 
@@ -160,18 +160,24 @@ li.header__dropdown {
     color: black;
     font-size: 18px;
     font-weight: bold;
+    word-wrap: break-word;
 }
 
 .close-wrapper {
     text-align: right;
 }
 
-.close-wrapper button {
-    font-size: 20px;
+.close-wrapper #close {
+    font-family: 'Noto Serif KR';
+    font-size: 18px;
     background-color: darkgoldenrod;
     color: white;
     border: 1px solid black;
     box-shadow: none;
+    border-radius: 8px;
+    padding: 3px 6px 5px 6px;
+    padding-top: 3px;
+    cursor: pointer;
 }
 
 
