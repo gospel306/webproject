@@ -105,15 +105,65 @@ li.header__dropdown {
     grid-template-columns: 1fr 3fr;
     /* padding: 0 8px; */
     display: grid;
-    text-align: center;
+    margin: 10px;
+    /* border-radius: 13px; */
+    /* background-color: rgb(224, 226, 226); */
+    border-bottom: 1px solid black;
+}
+
+.review:hover {
+    background-color: rgb(179, 212, 212);
+    /* border-radius: 13px; */
 }
 
 .review__left {
-    font-size: 14px;
+    font-size: 15px;
+    text-align: center;
+    padding: 10px;
 }
 
 .review__right {
     font-size: 14px;
+    padding: 10px;
+}
+
+.review__content span {
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* 라인수 */	
+    -webkit-box-orient: vertical; 
+    word-wrap:break-word;
+}
+
+.modal-wrapper {
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal {
+    background: white;
+    padding: 24px 16px;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.modal-title {
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.close-wrapper {
+    text-align: right;
 }
 
 
@@ -150,6 +200,7 @@ li.header__dropdown {
 
 .place__detail h1 {
     margin: 5px 10px;
+    margin-bottom: 9px;
     font-family: 'Song Myung';
 }
 
@@ -168,6 +219,7 @@ li.header__dropdown {
 }
 
 .rate{
+    font-size
     color:salmon
 }
 
@@ -215,30 +267,15 @@ li.header__dropdown {
 .info_text{
     margin: 10px;
     /* overflow: scroll; */
-    height: 250px;
 }
 
 .info_text span {
-    /* display: inline-block;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 100%;
-
+    overflow: hidden; 
+    text-overflow: ellipsis; 
     display: -webkit-box;
-  -webkit-line-clamp: 7;
-  -webkit-box-orient: vertical; */
-  overflow: hidden; 
-
-text-overflow: ellipsis; 
-
-display: -webkit-box;
-
--webkit-line-clamp: 10; /* 라인수 */	
-
--webkit-box-orient: vertical; 
-
-word-wrap:break-word;
+    -webkit-line-clamp: 10; /* 라인수 */	
+    -webkit-box-orient: vertical; 
+    word-wrap:break-word;
 }
 
 .info_map{
