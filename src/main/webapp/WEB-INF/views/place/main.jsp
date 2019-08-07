@@ -349,15 +349,12 @@
         }
 
         deleteNoPhoto = (event) => {
-            // event.preventDefault();
-            const temp1 = document.getElementById('noImage')
-            // const temp = document.querySelector('.noImage').parentNode;
-            console.log(temp1)
-            temp1.style.display = "none";
-            // console.log(temp);
-            const noImages = temp.map((place) => {
-                console.log(place);
-            })
+            const noImages = document.querySelectorAll('#noImage');
+            console.log(noImages);
+            for (let i = 0; i < noImages.length; i++) {
+                let noImage = noImages[i].parentNode;
+                noImage.style.display = "none";
+            }
         }
     </script>
 </body>
