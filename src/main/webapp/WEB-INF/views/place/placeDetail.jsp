@@ -342,7 +342,7 @@
 								<p>안녕하세요! 전 겸댕이 한범이에요. 오늘 현충원에 방문해서 호국영령들에 대한 묵념의 시간을 가지면서 뜻깊은 하루를 보냈어요. 꼭 방문해보세요!</p>
 
 								<div class="close-wrapper">
-									<button id="close">닫기</button>
+									<div id="close">닫기</div>
 								</div>
 							</div>
 						</div>
