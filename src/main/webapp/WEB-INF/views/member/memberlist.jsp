@@ -46,46 +46,54 @@
 
 		<!-- 메인 -->
 		<div class="main">
-			<form method="get" action="memberlist.do">
-				<div class="searchForm__wrapper">
-					<div class="searchForm__left">
-						<select name="searchOption">
-							<c:choose>
-								<c:when test="${searchOption eq 'NAME'}">
-									<option value="ID">아이디</option>
-									<option value="NAME" selected="selected">이름</option>
-									<option value="PHONENUM">전화번호</option>
-									<option value="EMAIL">이메일</option>
-								</c:when>
-								<c:when test="${searchOption eq 'PHONENUM'}">
-									<option value="ID">아이디</option>
-									<option value="NAME">이름</option>
-									<option value="PHONENUM" selected="selected">전화번호</option>
-									<option value="EMAIL">이메일</option>
-								</c:when>
-								<c:when test="${searchOption eq 'EMAIL'}">
-									<option value="ID">아이디</option>
-									<option value="NAME">이름</option>
-									<option value="PHONENUM">전화번호</option>
-									<option value="EMAIL" selected="selected">이메일</option>
-								</c:when>
-								<c:otherwise>
-									<option value="ID" selected="selected">아이디</option>
-									<option value="NAME">이름</option>
-									<option value="PHONENUM">전화번호</option>
-									<option value="EMAIL">이메일</option>
-								</c:otherwise>
-							</c:choose>
-						</select>
+			<div style="float: left;">
+				<p class="mainText">회원관리</p>
+			</div>
+			<div style="float: right;">
+				<form method="get" action="memberlist.do">
+					<div class="searchForm__wrapper">
+						<div class="searchForm__left">
+							<select name="searchOption">
+								<c:choose>
+									<c:when test="${searchOption eq 'NAME'}">
+										<option value="ID">아이디</option>
+										<option value="NAME" selected="selected">이름</option>
+										<option value="PHONENUM">전화번호</option>
+										<option value="EMAIL">이메일</option>
+									</c:when>
+									<c:when test="${searchOption eq 'PHONENUM'}">
+										<option value="ID">아이디</option>
+										<option value="NAME">이름</option>
+										<option value="PHONENUM" selected="selected">전화번호</option>
+										<option value="EMAIL">이메일</option>
+									</c:when>
+									<c:when test="${searchOption eq 'EMAIL'}">
+										<option value="ID">아이디</option>
+										<option value="NAME">이름</option>
+										<option value="PHONENUM">전화번호</option>
+										<option value="EMAIL" selected="selected">이메일</option>
+									</c:when>
+									<c:otherwise>
+										<option value="ID" selected="selected">아이디</option>
+										<option value="NAME">이름</option>
+										<option value="PHONENUM">전화번호</option>
+										<option value="EMAIL">이메일</option>
+									</c:otherwise>
+								</c:choose>
+							</select>
+						</div>
+						<div class="searchForm__right">
+							<input id="searchForm__input" name="keyword" value="${keyword}" />
+							<button id="searchForm__submit" type="submit">조회</button>
+						</div>
 					</div>
-					<div class="searchForm__right">
-						<input id="searchForm__input" name="keyword" value="${keyword}" />
-						<button id="searchForm__submit" type="submit">조회</button>
-					</div>
-				</div>
-			</form>
+				</form>
+			</div>
+			<div style="clear: both;"></div>
 
-			<div style="min-height: 350px; border-top: 1px solid black; border-bottom: 1px solid black; margin: 10px 0;">
+
+			<div
+				style="min-height: 350px; border-top: 1px solid black; border-bottom: 1px solid black; margin: 10px 0;">
 				<div id="table">
 					<div class="row">
 						<span class="cell table__id">아이디</span>
@@ -109,7 +117,7 @@
 									</c:when>
 									<c:otherwise>
 										<button
-											onclick="location.href='updateMemberType.do?id=${member.id}'">승급</button>
+											onclick="location.href='updateMemberType.do?id=${member.id}'">승격</button>
 										<button onclick="location.href='deleteMember.do?id=${member.id}'">탈퇴</button>
 									</c:otherwise>
 								</c:choose>
