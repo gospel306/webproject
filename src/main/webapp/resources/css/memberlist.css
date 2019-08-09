@@ -109,6 +109,14 @@ li.header__dropdown {
     display: inline;
 }
 
+.mainText {
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
 select {
     font-size: 16px;
 }
@@ -122,22 +130,22 @@ select {
 
 .searchForm__left {
     text-align: right;
-    width: 40%;
+    /* width: 40%; */
 }
 
 .searchForm__left select {
-    width: 80px;
+    width: 75px;
     height: 30px;
     margin: 0 5px;
 }
 
 .searchForm__right {
     text-align: left;
-    width: 60%;
+    /* width: 60%; */
 }
 
 #searchForm__input {
-    width: 120px;
+    width: 100px;
     height: 24.4px;
     margin-right: 0;
     padding: 0 8px;
@@ -178,15 +186,19 @@ button {
 .table__id {
     width: 15%;
 }
+
 .table__name {
     width: 10%;
 }
+
 .table__phone {
     width: 20%;
 }
+
 .table__email {
     width: 15%;
 }
+
 .table__userType {
     width: 15%;
 }
@@ -218,7 +230,7 @@ button {
 }
 
 .pagination a.active {
-    background-color: #4CAF50;
+    background-color: darkgray;
     color: white;
     border-radius: 5px;
 }
@@ -232,11 +244,9 @@ button {
     .wrapper__main {
         width: 65%;
     }
-    .searchForm__left {
-        width: 35%;
-    }
+
     .searchForm__left select {
-        width: 100px;
+        width: 80px;
         height: 55px;
         margin: 0 10px;
         text-align: center;
@@ -246,10 +256,9 @@ button {
     }
     .searchForm__right {
         text-align: left;
-        width: 65%;
     }
     #searchForm__input {
-        width: 350px;
+        width: 250px;
         height: 48px;
         padding: 1px 10px;
         font-size: 17px;
@@ -266,5 +275,9 @@ button {
     }
     button {
         font-size: 15px;
+    }
+
+    .mainText {
+        font-size: 48px;
     }
 }
