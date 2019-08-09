@@ -91,7 +91,6 @@
 			</div>
 			<div style="clear: both;"></div>
 
-
 			<div
 				style="min-height: 350px; border-top: 1px solid black; border-bottom: 1px solid black; margin: 10px 0;">
 				<div id="table">
