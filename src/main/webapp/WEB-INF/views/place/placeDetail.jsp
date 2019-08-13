@@ -858,52 +858,62 @@
 		}
 	</script>
 	<script>
-		// 처음 열었으 때 숨김 표시
-		$(document).ready(function () {
-			$("#sharehide").toggle();
-		});
-		// 클릭시 숨김과 보여줌을 반복
-		$(function () {
-			$("#sharebutton").click(function () {
-				$("#sharehide").toggle();
-			});
-		});
-
-		function sendLinkFacebook() {
-			var raw_url = window.location.href;
-			var Facebook_root_url = "https://www.facebook.com/sharer/sharer.php?u=";
-			var Facebook_share_url = Facebook_root_url + encodeURI(raw_url);
-			window.open(Facebook_share_url,
-				'Share on Facebook',
-				'scrollbars=no, width=500, height=500');
-		}
-		function sendLinkTwitter() {
-			var raw_url = "{{ request.path }}";
-			var raw_title = "{{ post.title }}"
-			var twitter_root_url = "https://twitter.com/share?url="
-			var twitter_share_url = twitter_root_url + encodeURI(raw_url) + "&title=" + encodeURI(raw_title);
-			window.open(twitter_share_url,
-				'Share on twitter',
-				'scrollbars=no, width=500, height=500');
-		}
-		function sendLinkNaver() {
-			var raw_url = "{{ request.path }}";
-			var raw_title = "{{ post.title }}"
-			var naver_root_url = "http://share.naver.com/web/shareView.nhn?url="
-			var naver_share_url = naver_root_url + encodeURI(raw_url) + "&title=" + encodeURI(raw_title);
-			window.open(naver_share_url,
-				'Share on Naver',
-				'scrollbars=no, width=500, height=500');
-		}
-		function sendLinkKakao() {
-			console.log(1)
-			var raw_url = window.location.href;
-			var Kakao_root_url = "https://story.kakao.com/share?url=";
-			var Kakao_share_url = Kakao_root_url + encodeURI(raw_url);
-			window.open(Kakao_share_url,
-				'Share on Kakao',
-				'scrollbars=no, width=500, height=500');
-		}
+        // 처음 열었으 때 숨김 표시
+        $(document).ready(function() {
+            console.log(2)
+            $("#sharehide").toggle();
+        });
+        // 클릭시 숨김과 보여줌을 반복
+        $(function (){ $("#sharebutton").click(function (){
+            console.log(3)
+            $("#sharehide").toggle();
+            });
+        });
+        function sendLinkFacebook(){
+            var typeid = "${typeId}";
+            var id = "${tourInfo.contentId}"
+            var raw_url = "http://192.168.50.1:8080/AwesomePlace/placeDetail.do?id="+id + "&type="+typeid;
+             var Facebook_root_url = "https://www.facebook.com/sharer/sharer.php?u=";
+            console.log(raw_url)
+            var Facebook_share_url = Facebook_root_url + encodeURI(raw_url);
+            window.open(Facebook_share_url,
+                        'Share on Facebook',
+                        'scrollbars=no, width=500, height=500');
+        }
+        function sendLinkTwitter(){
+            var raw_title = "${tourInfo.title}";
+            var typeid = "${typeId}";
+            var id = "${tourInfo.contentId}"
+            var raw_url = "http://192.168.50.1:8080/AwesomePlace/placeDetail.do?id="+ id + "&type="+typeid;
+            var twitter_root_url = "https://twitter.com/share?url=";
+            text = raw_url;
+            console.log(text);
+            var twitter_share_url = twitter_root_url+encodeURI(encodeURIComponent(raw_url)) + "&text=" +  "http://192.168.50.1:8080/AwesomePlace/placeDetail.do?id="+ id + decodeURI("%26") + "type="+typeid;;
+            window.open(twitter_share_url,
+                        'Share on twitter',
+                        'scrollbars=no, width=500, height=500');
+        }
+        function sendLinkNaver(){
+            var raw_title = "${tourInfo.title}";
+            var typeid = "${typeId}";
+            var id = "${tourInfo.contentId}"
+            var raw_url = "http://192.168.50.1:8080/AwesomePlace/placeDetail.do?id="+id + "&type="+typeid;
+            var naver_root_url = "https://share.naver.com/web/shareView.nhn?url=";
+            var naver_share_url = naver_root_url+encodeURI(encodeURIComponent(raw_url)) + "&title=" +encodeURI(encodeURIComponent(raw_title));
+            window.open(naver_share_url,
+                        'Share on Naver',
+                        'scrollbars=no, width=500, height=500');
+        }
+        function sendLinkKakao(){
+            var typeid = "${typeId}";
+            var id = "${tourInfo.contentId}"
+            var raw_url = "http://192.168.50.1:8080/AwesomePlace/placeDetail.do?id="+id + "&type="+typeid;
+            var Kakao_root_url = "https://story.kakao.com/share?url=";
+            var Kakao_share_url = Kakao_root_url + encodeURI(encodeURIComponent(raw_url));
+            window.open(Kakao_share_url,
+                        'Share on Kakao',
+                        'scrollbars=no, width=500, height=500');
+        }
 		function goReviewCreate() {
 			location.href = "createReview.do?id=" + ${ tourInfo.contentId };
 		}
