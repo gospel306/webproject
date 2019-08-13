@@ -210,10 +210,21 @@
                         <div class="setLocation">
 =======
 			<li class="header__dropdown">
-				<a href="javascript:void(0)" class="header__button">Menu</a>
+				<c:if test="${sessionScope.memberType eq 'admin'}">
+					<a href="javascript:void(0)" class="header__button" style="padding: 15px 10px 15px 65px;">
+						Menu
+					</a>
+				</c:if>
+				<c:if test="${sessionScope.memberType ne 'admin'}">
+					<a href="javascript:void(0)" class="header__button" style="padding: 15px 10px 15px 28px;">
+						Menu
+					</a>
+				</c:if>
+
 				<c:if test="${sessionScope.ID eq null}">
 					<div class="header__content">
-						<a href="loginForm.do">SignIn</a> <a href="signUpForm.do">SignUp</a>
+						<a href="loginForm.do">SignIn</a>
+						<a href="signUpForm.do">SignUp</a>
 					</div>
 				</c:if>
 				<c:if test="${sessionScope.ID ne null}">
