@@ -108,7 +108,7 @@
 
 >>>>>>> 6631efa... 유창오| 사용자 리뷰 목록에 별점 정보 추가
 					<div class="mainHeader__right rate">
-						<h1>${star}</h1>
+						<h1 style="color: darkorange;">${star}</h1>
 					</div>
 					<div style="clear: both;"></div>
 				</div>
@@ -475,7 +475,7 @@
 								</span>
 >>>>>>> 6631efa... 유창오| 사용자 리뷰 목록에 별점 정보 추가
 							</div>
-							<div class="review__right" id="open" style="cursor: pointer">
+							<div class="review__right" id="open${review.num}" style="cursor: pointer">
 								<div class="review__content" style="float: left;">
 									<span>${review.content}</span>
 								</div>
@@ -501,7 +501,7 @@
 									<span style="display: block; font-size: 12px; color: darkgray; margin: 0;">
 										${review.time_Stamp}에 방문했습니다.
 									</span>
-									<p>${review.content}</p>
+									<p style="font-size: 15px;">${review.content}</p>
 
 									<div class="close-wrapper">
 										<span id="close">닫기</span>
