@@ -216,7 +216,7 @@
 					</a>
 				</c:if>
 				<c:if test="${sessionScope.memberType ne 'admin'}">
-					<a href="javascript:void(0)" class="header__button" style="padding: 15px 10px 15px 28px;">
+					<a href="javascript:void(0)" class="header__button" style="padding: 15px 10px 15px 29px;">
 						Menu
 					</a>
 				</c:if>
@@ -278,13 +278,12 @@
 
 					<p class="mainImage__subText">
 						<span class="subText__location">${address}
-						</span>근처<br>
+						</span><br>근처
 
 						<span class="subText__distance">${distance }km</span>
 					</p>
-					<button id="open"
-						style="border-radius: 5px; border: 1px solid black; background: darkcyan; padding: 7px; color: white; font-family: 'Song Myung'; font-size: 16px;">다른
-						위치에서 검색 <img style="width: 12px; height:16px; " src="data:image/svg+xml;base64,
+					<button id="open">다른
+						위치에서 검색 <img class="open__image" src="data:image/svg+xml;base64,
 							PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDQ4NS4yMTMgNDg1LjIxMyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDg1LjIxMyA0ODUuMjEzOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgY2xhc3M9IiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNNDcxLjg4Miw0MDcuNTY3TDM2MC41NjcsMjk2LjI0M2MtMTYuNTg2LDI1Ljc5NS0zOC41MzYsNDcuNzM0LTY0LjMzMSw2NC4zMjFsMTExLjMyNCwxMTEuMzI0ICAgIGMxNy43NzIsMTcuNzY4LDQ2LjU4NywxNy43NjgsNjQuMzIxLDBDNDg5LjY1NCw0NTQuMTQ5LDQ4OS42NTQsNDI1LjMzNCw0NzEuODgyLDQwNy41Njd6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIiBzdHlsZT0iZmlsbDojRkZGRkZGIj48L3BhdGg+CgkJPHBhdGggZD0iTTM2My45MDksMTgxLjk1NUMzNjMuOTA5LDgxLjQ3MywyODIuNDQsMCwxODEuOTU2LDBDODEuNDc0LDAsMC4wMDEsODEuNDczLDAuMDAxLDE4MS45NTVzODEuNDczLDE4MS45NTEsMTgxLjk1NSwxODEuOTUxICAgIEMyODIuNDQsMzYzLjkwNiwzNjMuOTA5LDI4Mi40MzcsMzYzLjkwOSwxODEuOTU1eiBNMTgxLjk1NiwzMTguNDE2Yy03NS4yNTIsMC0xMzYuNDY1LTYxLjIwOC0xMzYuNDY1LTEzNi40NiAgICBjMC03NS4yNTIsNjEuMjEzLTEzNi40NjUsMTM2LjQ2NS0xMzYuNDY1Yzc1LjI1LDAsMTM2LjQ2OCw2MS4yMTMsMTM2LjQ2OCwxMzYuNDY1ICAgIEMzMTguNDI0LDI1Ny4yMDgsMjU3LjIwNiwzMTguNDE2LDE4MS45NTYsMzE4LjQxNnoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiIHN0eWxlPSJmaWxsOiNGRkZGRkYiPjwvcGF0aD4KCQk8cGF0aCBkPSJNNzUuODE3LDE4MS45NTVoMzAuMzIyYzAtNDEuODAzLDM0LjAxNC03NS44MTQsNzUuODE2LTc1LjgxNFY3NS44MTZDMTIzLjQzOCw3NS44MTYsNzUuODE3LDEyMy40MzcsNzUuODE3LDE4MS45NTV6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIiBzdHlsZT0iZmlsbDojRkZGRkZGIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==" /></button>
 				</div>
 			</div>
@@ -416,7 +415,7 @@
 		</div>
 		<div class="places">
 			<c:forEach var="place" items="${tourList }">
-				<div class="placeType${place.contentTypeId}">
+				<div class="placeType${place.contentTypeId} placee">
 					<div class="places__place"
 						onclick="location.href='placeDetail.do?id=${place.contentId}&type=${place.contentTypeId}'">
 						<c:if test="${place.image ne '' }">
@@ -641,7 +640,7 @@
 			for (var i = 0; i < num.length; i++) {
 				var elements = document.getElementsByClassName("placeType" + num[i]);
 				for (var j = 0; j < elements.length; j++) {
-					elements[j].style.display = "block";
+					elements[j].style.display = "inline";
 				}
 			}
 			if (selectValue != 0) {
