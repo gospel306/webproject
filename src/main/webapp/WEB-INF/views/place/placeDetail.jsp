@@ -93,7 +93,7 @@
 						<h1>${tourInfo.title }</h1>
 					</div>
 					<div class="mainHeader__right rate">
-						<h1>4.1</h1>
+						<h1>${star}</h1>
 					</div>
 					<div style="clear: both;"></div>
 				</div>
