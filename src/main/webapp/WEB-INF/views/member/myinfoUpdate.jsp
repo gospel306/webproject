@@ -62,7 +62,7 @@
 							<input type="text" class="inputForm" value="${member.id }" disabled="disabled">
 							
 							<p>휴대폰 번호</p>
-							<input type="text" id="phoneNum" class="inputForm" value="${member.phonenum }">
+							<input type="text" id="phoneNum" class="inputForm" value="${member.phonenum }" onKeyup="inputPhoneNumber(this);">
 							<small>※ 정확한 연락처 정보를 입력해 주세요</small>
 							
 							<p>E-Mail</p>
