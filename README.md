@@ -16,14 +16,12 @@
   * `Java`
   * `HTML/CSS`, `JavaScript`
 * **웹 프레임워크**
-  *  `Spring Boot`
+  *  `Spring`
 * **주요 라이브러리**
-  *  `Vue.js`
   *  `Thymeleaf`
 * **데이터베이스**
   *  `MySQL` 
-* **배포**
-  * `AWS`
+
 
 
 
