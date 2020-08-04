@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
@@ -29,3 +30,6 @@ build/
 
 ### VS Code ###
 .vscode/
+=======
+/bin/
+>>>>>>> a0624b9... 한범|삭제 테스트
