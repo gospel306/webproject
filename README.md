@@ -70,7 +70,7 @@
 
 ## 4. 데이터베이스 모델링
 
-![Document-page-001](assets/Document-page-001.jpg)
+![Document-page-001](images/Document-page-001.jpg)
 
 ## 5. 개발 진행 경과사항
 

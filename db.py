@@ -11,11 +11,7 @@ res = requests.get(URL)
 respon = res.json()
 for i in range(25344):
     print('i = {}'.format(i))
-<<<<<<< HEAD
-    temp = respon['response']['body']['items']['item'][i+8811]
-=======
     temp = respon['response']['body']['items']['item'][i+25344]
->>>>>>> 18603a9... db 25344개 입력(완료)
     if "addr1" in temp:
         add = temp['addr1']
         if "addr2" in temp:
