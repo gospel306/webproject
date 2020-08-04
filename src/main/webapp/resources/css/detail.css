@@ -14,7 +14,6 @@ body {
 }
 
 /* ---------------- */
-
 .nav {
     font-family: 'Quicksand';
     min-height: 100%;
@@ -46,36 +45,37 @@ li a, .header__button {
 }
 
 .header__button {
-    min-width: 50px;
+    min-width: 60px;
+    padding: 15px 10px 15px 65px;
 }
 
-li a:hover, .header__dropdown:hover .header__button {
-    background-color: darkslategray;
+li a:hover, .header__dropdown:hover {
+	text-align: right;
 }
 
 li.header__dropdown {
     display: inline-block;
     float: right;
     font-size: 1.3em;
+    padding-right: 10px;
+    text-align: right;
+    padding-right: 0;
 }
 
 .header__content {
     display: none;
     position: absolute;
-    background-color: lightseagreen;
-    opacity: 0.6;
-    /* min-width: 160px; */
+    background-color: darkslategray;
+    opacity: 0.8;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
 .header__content a {
-    color: black;
-    /* padding: 12px 16px; */
+    color: white;
     text-decoration: none;
     display: block;
     text-align: right;
-    min-width: 50px;
 }
 
 .header__content a:hover {

@@ -154,7 +154,11 @@
 
 	<link rel="stylesheet" href="resources/css/map.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<<<<<<< HEAD
 >>>>>>> 17a85c6... 유창오| main.jsp 필터링 버튼 디자인 수정
+=======
+	<script src="https://kit.fontawesome.com/573aa2aa9b.js"></script>
+>>>>>>> 26cabbf... 유창오| 헤더 오류해결 및 디자인 수정, 메인페이지 디자인 수정
 </head>
 
 <body>
@@ -214,11 +218,11 @@
 				</c:if>
 				<c:if test="${sessionScope.ID ne null}">
 					<div class="header__content">
-						<a href="logout.do">logout</a>
+						<a href="logout.do">Signout</a>
 						<a href="myinfo.do">MyInfo</a>
 						<c:if test="${sessionScope.memberType eq 'admin'}">
-							<a href="memberlist.do">memberlist</a>
-							<a href="insertplace.do">insertplace</a>
+							<a href="memberlist.do">MemberList</a>
+							<a href="insertplace.do">InsertPlace</a>
 						</c:if>
 					</div>
 				</c:if>
@@ -258,18 +262,21 @@
 					</c:if>
 
 					<p class="mainImage__subText">
-						<span class="subText__location">${address}</span><br>
-						근처
+						<span class="subText__location">${address}
+						</span>근처<br>
+
 						<span class="subText__distance">${distance }km</span>
 					</p>
-					<button id="open">다른 위치에서 알아보기</button>
+					<button id="open"
+						style="border-radius: 5px; border: 1px solid black; background: darkcyan; padding: 7px; color: white; font-family: 'Song Myung'; font-size: 16px;">다른
+						위치에서 검색 <span style="margin-top: 3px;"><i class="fas fa-search"></i></span></button>
 				</div>
 			</div>
 			<div class="modal-wrapper" style="display: none;">
 				<div class="modal">
-					<div class="modal-title">다른 위치에서 알아보기</div>
-					<!--  -->
+					<div class="modal-title" style="padding: 10px; text-align: center;">다른 위치에서 알아보기</div>
 					<div class="map_wrap">
+<<<<<<< HEAD
 <<<<<<< HEAD
 						<div id="map"
 							style="width: 100%; height: 100%; position: relative; overflow: hidden;"></div>
@@ -331,11 +338,18 @@
                 <div class="main__orderOption">
 =======
 						<div id="menu_wrap" class="bg_white">
+=======
+						<div id="map" style="width: 100%; height: 300px; position: relative; overflow: hidden;"></div>
+
+						<div id="menu_wrap" class="bg_white" style="margin: 10px;">
+>>>>>>> 26cabbf... 유창오| 헤더 오류해결 및 디자인 수정, 메인페이지 디자인 수정
 							<div class="option">
 								<form onsubmit="searchPlaces(); return false;">
-									<div>
-										키워드 : <input type="text" value="" id="keyword" size="15">
-										<button type="submit">검색하기</button>
+									<div style="font-family: 'Song Myung';">
+										<input type="text" value="" id="keyword" size="20" placeholder="원하는 지역을 입력하세요."
+											style="margin: 5px 0; padding: 3px; font-family: 'Noto Serif KR';">
+										<button type="submit"
+											style="background: white; border: 1px solid black; padding: 5px; border-radius: 5px; margin-left: 0;">검색</button>
 									</div>
 								</form>
 								<form onsubmit="return changeLocation()">
@@ -346,14 +360,13 @@
 											value="${distance}" onchange="getRangeValue(value)" />
 									</div>
 									<div class="close-wrapper">
-										<input type="submit" value="적용">
-										<button id="close">취소</button>
+										<input type="submit" value="적용"
+											style="background: white; border: 1px solid black; padding: 5px; border-radius: 5px;">
+										<button id="close"
+											style="background: white; border: 1px solid black; padding: 5px; border-radius: 5px; margin-left: 0;">취소</button>
 									</div>
 								</form>
 							</div>
-							<hr>
-							<!-- 					<ul id="placesList"></ul>
-					<div id="pagination"></div> -->
 						</div>
 					</div>
 					<script type="text/javascript"
@@ -366,21 +379,22 @@
 							//location.reload();
 						}
 					</script>
-					<!--  -->
 				</div>
 			</div>
+
 			<div class="main__options">
-				<select id="showOption" onchange="changeSelect()">
-					<option value=0 selected="selected">전체</option>
-					<option value=12>관광지</option>
-					<option value=14>문화</option>
-					<option value=15>축제</option>
-					<option value=39>식당</option>
-					<option value=38>쇼핑</option>
-					<option value=25>코스</option>
-					<option value=32>숙박</option>
-					<option value=28>레포츠</option>
-				</select>
+				<span style="text-align: center;">
+					<select id="showOption" style="margin-right: 0;" onchange="changeSelect()">
+						<option value=0 selected="selected">전체</option>
+						<option value=12>관광지</option>
+						<option value=14>문화</option>
+						<option value=15>축제</option>
+						<option value=39>식당</option>
+						<option value=38>쇼핑</option>
+						<option value=32>숙박</option>
+						<option value=28>레포츠</option>
+					</select>
+				</span>
 				<button type="button" onclick="setMyRealLocaion()">내 위치에서 알아보기</button>
 				<button id="showPhoto" type="button" onclick="deleteNoPhoto()">사진 있는 관광지만 보기</button>
 			</div>
@@ -628,6 +642,11 @@
 			}
 		}
 	</script>
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 26cabbf... 유창오| 헤더 오류해결 및 디자인 수정, 메인페이지 디자인 수정
 </body>
 
 </html>
