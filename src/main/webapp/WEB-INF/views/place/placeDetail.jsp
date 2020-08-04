@@ -543,7 +543,7 @@
 									</span>
 									<p style="font-size: 15px;">${review.content}</p>
 
-									<div class="w3-content" style="max-width: 340px;">
+									<div class="w3-content image-wrapper">
 										<c:set var="tempName" value="image${review.num}"></c:set>
 
 <<<<<<< HEAD
@@ -560,6 +560,7 @@
 
 =======
 										
+<<<<<<< HEAD
 >>>>>>> 0d639cf... 유창오| 세부디자인 변경
 										<div class="w3-row-padding w3-section">
 											<c:forEach var="myImage" items="${requestScope[tempName]}" varStatus="status">
@@ -666,6 +667,19 @@
 										<div class="w3-content">
 											<c:forEach var="myImage" items="${requestScope[tempName]}">
 												<img class="modal-image" src="data:image/jpeg;base64,${myImage}">
+=======
+										<div class="w3-row w3-center">
+											<c:forEach var="myImage" items="${requestScope[tempName]}" varStatus="status">
+												<c:if test="${status.count eq 1 || status.count eq 2}">
+												
+													<div class="w3-col w3-center s12 m5" style="margin: 8px; text-align: center;">
+														<img class="demo" src="data:image/jpeg;base64,${myImage}"
+															style="width: 100%; height: 100%;">
+													</div>
+												</c:if>
+												<c:if test="${status.count eq 3}">
+												</c:if>
+>>>>>>> 116ecb4... 유창오| 리뷰 이미지 사이즈 조절
 											</c:forEach>
 											
 											<div class="w3-row-padding w3-section">
