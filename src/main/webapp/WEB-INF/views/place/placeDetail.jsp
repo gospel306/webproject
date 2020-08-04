@@ -333,6 +333,21 @@
 							</div>
 						</div>
 					</div>
+
+					<div class="modal-wrapper" style="display: none;">
+						<div class="modal">
+							<div class="modal-title">
+								<h3 style="margin-bottom: 2px;">박한범님의 현충원 후기</h3>
+								<span style="display: block; font-size: 12px; color: darkgray; margin: 0;">2019년 8월 7일에 방문했습니다.</span>
+								<p>안녕하세요! 전 겸댕이 한범이에요. 오늘 현충원에 방문해서 호국영령들에 대한 묵념의 시간을 가지면서 뜻깊은 하루를 보냈어요. 꼭 방문해보세요!</p>
+
+								<div class="close-wrapper">
+									<button id="close">닫기</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
 					<div class="review">
 							<div class="review__left">
 								<span>
@@ -384,16 +399,45 @@
 			infowindow.open(map, marker);
 		</script>
 		<script>
+			// 사용자 리뷰 모달창 열기
 			const open = document.getElementById("open");
 			const close = document.getElementById("close");
 			const modal = document.querySelector(".modal-wrapper");
-
 			open.onclick = () => {
 				modal.style.display = "flex";
 			};
 			close.onclick = () => {
 				modal.style.display = "none";
 			};
+<<<<<<< HEAD
+=======
+			function nosess() {
+				alert("로그인 후 이용해주세요!");
+			}
+			//------------------------------------------------------
+			function dib() {
+				$.ajax({
+					type: "GET", //전송방식을 지정한다 (POST,GET)
+					url: "changeDib.do?contentId=" + "${tourInfo.contentId}",//호출 URL을 설정한다. GET방식일경우 뒤에 파라티터를 붙여서 사용해도된다.
+
+					dataType: "text",//호출한 페이지의 형식이다. xml,json,html,text등의 여러 방식을 사용할 수 있다.
+					error: function () {
+						alert("읭이잉?");
+					},
+					success: function (result) {
+						if (result == "true") {
+							alert("찜한 목록에 추가되었습니다!");
+							tmp = "<a onClick='dib(); return false'><i class='fas fa-heart'></i><span class='icon_text'>가고싶어요</span>"
+						} else {
+							alert("찜한 목록에서 제거되었습니다!");
+							tmp = "<a onClick='dib(); return false'><i class='far fa-heart'></i></i><span class='icon_text'>가고싶어요</span>"
+						}
+						//var check=${check_dib};
+						$("#dib").html(tmp);
+					}
+				});
+			}       
+>>>>>>> 2903106... 유창오| 사용자 리뷰 클릭시 모달 팝업을 통해 상세정보 출력
 		</script>
 
 </body>
