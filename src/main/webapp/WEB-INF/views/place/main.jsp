@@ -148,6 +148,7 @@
 
 <body>
     <div class="wrapper__main">
+<<<<<<< HEAD
         <ul class="nav">
             <li>
                 <a href="main.do" class="header__logo">
@@ -163,6 +164,9 @@
                 </div>
             </li>
         </ul>
+=======
+        
+>>>>>>> cadb329... 유창오| createReview 페이지 생성, 디자인 일부 수정
 
         <div class="main">
             <div class="mainImage__container">
