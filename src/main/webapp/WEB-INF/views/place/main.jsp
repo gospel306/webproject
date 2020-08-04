@@ -241,6 +241,7 @@
 							style="width: 100%; height: 100%; position: relative; overflow: hidden;"></div>
 >>>>>>> 59946f9... 유창오| main 메인텍스트 디자인 수정, memberlist 테이블 및 pagination 디자인 수정
 
+<<<<<<< HEAD
                 <div id="menu_wrap" class="bg_white">
                     <div class="option">
                         <div>
@@ -291,6 +292,93 @@
 >>>>>>> 58a8b90... 유창오| main 세부디자인 사소한변경 및 이미지 없는 장소는 안보이게 하기 작업중
                 </div>
                 <div class="main__orderOption">
+=======
+						<div id="menu_wrap" class="bg_white">
+							<div class="option">
+								<form onsubmit="searchPlaces(); return false;">
+									<div>
+										키워드 : <input type="text" value="" id="keyword" size="15">
+										<button type="submit">검색하기</button>
+									</div>
+								</form>
+								<form onsubmit="return changeLocation()">
+									<div class="setLocation"></div>
+									<div class="setDistance">
+										<p id="rangeValue">${distance}km반경</p>
+										<input id="range" type="range" name="distance" min="1"
+											max="10" step="1" value="${distance}"
+											onchange="getRangeValue(value)"/>
+									</div>
+									<div class="close-wrapper">
+										<input type="submit" value="적용">
+										<button id="close">취소</button>
+									</div>
+								</form>
+							</div>
+							<hr>
+							<!-- 					<ul id="placesList"></ul>
+					<div id="pagination"></div> -->
+						</div>
+					</div>
+					<script type="text/javascript"
+						src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0128abab124ce04ae17c622f465a5647&libraries=services,clusterer"></script>
+					<script src="resources/js/map.js"></script>
+					<script>
+                        setMarker("${mapy}", "${mapx}", "${distance}")
+                	var tmp="${address}"
+                	if(tmp==""){
+                		//location.reload();
+                	}
+                    </script>
+					<!--  -->
+				</div>
+			</div>
+			<div class="main__options">
+				<select id="showOption" onchange="changeSelect()">
+					<option value=0 selected="selected">전체</option>
+					<option value=12>관광지</option>
+					<option value=14>문화</option>
+					<option value=15>축제</option>
+					<option value=39>식당</option>
+					<option value=38>쇼핑</option>
+					<option value=25>코스</option>
+					<option value=32>숙박</option>
+					<option value=28>레포츠</option>
+				</select>
+				<form id="filterOptions">
+					<button type="button" onclick="setMyRealLocaion()">내 위치에서 알아보기</button>
+					<button type="button" onclick="deleteNoPhoto()">사진 있는 관광지만 보기</button>
+				</form>
+			</div>
+			<div class="main__orderOption"></div>
+		</div>
+		<div class="places">
+			<c:forEach var="place" items="${tourList }">
+				<div class="placeType${place.contentTypeId}">
+					<div class="places__place" onclick="location.href='placeDetail.do?id=${place.contentId}&type=${place.contentTypeId}'">
+						<c:if test="${place.image ne '' }">
+							<div class="place__image"
+								style="background-image: url('${place.image}')"></div>
+							<div class="place__content1">
+								<h3 style="margin: 0;">${place.title }</h3>
+								<p style="margin: 0;">${place.address }</p>
+							</div>
+						</c:if>
+						<c:if test="${place.image eq '' }">
+							<div id="noImage" class="place__image"
+								style="background-image: url('http://www.owlenergy.biz/images/owl_img/slide/nopicture.jpg')">
+							</div>
+							<div class="place__content2">
+								<p style="margin: 0;">${place.title }</p>
+								<p style="margin: 0;">${place.address }</p>
+							</div>
+						</c:if>
+					</div>
+				</div>
+			</c:forEach>
+		</div>
+	</div>
+>>>>>>> f6a0b94... 유창오| 메인 페이지 필터링 옵션 버튼화, 리뷰 작성 페이지 star rating border  설정
 
                 </div>
             </div>

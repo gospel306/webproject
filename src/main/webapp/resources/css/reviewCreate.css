@@ -363,6 +363,12 @@ li.header__dropdown {
     box-shadow: 3px 3px 3px rgba(214, 209, 209, 0.5);
 }
 
+.stars {
+    padding: 8px;
+    border: 1px dotted black;
+    border-radius: 8px;
+}
+
 form .stars {
     background: url("stars.png") repeat-x 0 0;
     width: 150px;
