@@ -100,12 +100,184 @@ li.header__dropdown {
 }
 
 /* ---------------- */
+
+/* SearchForm */
+
+.center {
+    text-align: center;
+}
+
+.inline {
+    display: inline;
+}
+
 select {
     font-size: 16px;
+}
+
+.searchForm__wrapper {
+    margin: 5px;
+    padding: 5px;
+    display: flex;
+    font-family: "San Serif KR";
+}
+
+.searchForm__left {
+    text-align: right;
+    width: 40%;
+}
+
+.searchForm__left select {
+    width: 80px;
+    height: 30px;
+    margin: 0 5px;
+}
+
+.searchForm__right {
+    text-align: left;
+    width: 60%;
+}
+
+#searchForm__input {
+    width: 120px;
+    height: 24.4px;
+    margin-right: 0;
+}
+
+#searchForm__submit {
+    height: 30px;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid black;
+}
+
+/* -------------------- */
+
+#table {
+    display: table;
+    width: 100%;
+    /* min-height: 400px; */
+}
+
+.row {
+    display: table-row;
+    text-align: center;
+}
+
+.cell {
+    display: table-cell;
+    padding: 6px 2px;
+    border-bottom: 1px solid #DDD;
+}
+
+.table__id {
+    width: 50%;
+}
+
+.table__name {
+    display: none;
+    /* width: 10%; */
+}
+
+.table__phone {
+    display: none;
+    width: 25%;
+}
+
+.table__email {
+    display: none;
+    /* width: 33.3%; */
+}
+
+.table__userType {
+    width: 50%;
+}
+
+.table__wrapper {
+    display: flex;
+    font-family: "San Serif KR";
+    border: 2px solid black;
+    margin: 0 5px;
+    padding: 5px;
+}
+
+.table__wrapper2 {
+    display: flex;
+    font-family: "San Serif KR";
+    margin: 0 5px;
+    border: 0.5px solid black;
+}
+
+.pagination {
+    display: inline-block;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+    border-radius: 5px;
 }
 
 @media(min-width: 720px) {
     .wrapper__main {
         width: 65%;
+    }
+    .searchForm__left {
+        width: 35%;
+    }
+    .searchForm__left select {
+        width: 100px;
+        height: 55px;
+        margin: 0 10px;
+        text-align: center;
+    }
+    option {
+        text-align: center;
+    }
+    .searchForm__right {
+        text-align: left;
+        width: 65%;
+    }
+    #searchForm__input {
+        width: 350px;
+        height: 48px;
+        padding: 1px 10px;
+        font-size: 17px;
+    }
+    #searchForm__submit {
+        font-size: 17px;
+        /* padding: 0;
+        margin: 0; */
+        min-width: 55px;
+        height: 55px;
+    }
+    .table__id {
+        width: 15%;
+    }
+    .table__name {
+        display: inline;
+        width: 10%;
+    }
+    .table__phone {
+        display: inline;
+        width: 25%;
+    }
+    .table__email {
+        width: 25%;
+    }
+    .table__userType {
+        width: 25%;
     }
 }

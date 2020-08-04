@@ -38,12 +38,45 @@
                 </c:if>
             </li>
         </ul>
-        <div class="bg__image"></div>
-        <div class="main"></div>
+        <div class="main">
+            <form class="inputForm">
+                <h3>현충원에 대한 후기 작성하기</h3>
+                <div class="stars">
+                    <input type="radio" name="star" class="star-1" id="star-1" value="1" required />
+                    <label class="star-1" for="star-1" onclick="setRatingText('최악이에요!');">1</label>
+                    <input type="radio" name="star" class="star-2" id="star-2" value="2" />
+                    <label class="star-2" for="star-2" onclick="setRatingText('별로에요!');">2</label>
+                    <input type="radio" name="star" class="star-3" id="star-3" value="3" />
+                    <label class="star-3" for="star-3" onclick="setRatingText('그저그래요!');">3</label>
+                    <input type="radio" name="star" class="star-4" id="star-4" value="4" />
+                    <label class="star-4" for="star-4" onclick="setRatingText('좋아요!');">4</label>
+                    <input type="radio" name="star" class="star-5" id="star-5" value="5" />
+                    <label class="star-5" for="star-5" onclick="setRatingText('정말 좋아요!');">5</label>
+                    <span></span>
+                </div>
+
+                <div class="contentInput">
+                    <p id="status">회원님의 평가를 별점으로 표시해주세요</p>
+                    <textarea name="content" id="contentInputForm" cols="2" rows="10"></textarea>
+
+                    <button type="submit">작성하기</button>
+                </div>
+            </form>
+        </div>
 
         <div class="footer">
             <p style="margin: 7px;">Copyright 2019. 공수래공수거. ALL RIGTHS RESERVED.</p>
         </div>
     </div>
+
+
+    <script>
+        const status = document.querySelector('#status')
+        setRatingText = (value) => {
+            // console.log('Hi!');
+            status.innerHTML = value;
+        }
+
+    </script>
 </body>
 </html>
