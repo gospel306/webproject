@@ -136,6 +136,7 @@
 <html lang="ko">
 
 <head>
+<<<<<<< HEAD
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -144,6 +145,16 @@
 
     <link rel="stylesheet" href="resources/css/map.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+=======
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Awesome Place</title>
+	<link rel="stylesheet" href="resources/css/main.css">
+
+	<link rel="stylesheet" href="resources/css/map.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+>>>>>>> 17a85c6... 유창오| main.jsp 필터링 버튼 디자인 수정
 </head>
 
 <body>
@@ -168,6 +179,7 @@
         
 >>>>>>> cadb329... 유창오| createReview 페이지 생성, 디자인 일부 수정
 
+<<<<<<< HEAD
         <div class="main">
             <div class="mainImage__container">
                 <img class="mainImage__image"
@@ -192,6 +204,27 @@
                     </div>
                     <form>
                         <div class="setLocation">
+=======
+			<li class="header__dropdown">
+				<a href="javascript:void(0)" class="header__button">Menu</a>
+				<c:if test="${sessionScope.ID eq null}">
+					<div class="header__content">
+						<a href="loginForm.do">SignIn</a> <a href="signUpForm.do">SignUp</a>
+					</div>
+				</c:if>
+				<c:if test="${sessionScope.ID ne null}">
+					<div class="header__content">
+						<a href="logout.do">logout</a>
+						<a href="myinfo.do">MyInfo</a>
+						<c:if test="${sessionScope.memberType eq 'admin'}">
+							<a href="memberlist.do">memberlist</a>
+							<a href="insertplace.do">insertplace</a>
+						</c:if>
+					</div>
+				</c:if>
+			</li>
+		</ul>
+>>>>>>> 17a85c6... 유창오| main.jsp 필터링 버튼 디자인 수정
 
                         </div>
                         <div class="setDistance">
@@ -217,7 +250,7 @@
 				<div class="mainImage__text">
 					<c:if test="${not empty ID}">
 						<p class="mainImage__mainText">
-						<strong>${name}</strong>님을 위한 특별한 장소
+							<strong>${name}</strong>님을 위한 특별한 장소
 						</p>
 					</c:if>
 					<c:if test="${empty ID}">
@@ -226,7 +259,7 @@
 
 					<p class="mainImage__subText">
 						<span class="subText__location">${address}</span><br>
-						근처 
+						근처
 						<span class="subText__distance">${distance }km</span>
 					</p>
 					<button id="open">다른 위치에서 알아보기</button>
@@ -237,9 +270,13 @@
 					<div class="modal-title">다른 위치에서 알아보기</div>
 					<!--  -->
 					<div class="map_wrap">
+<<<<<<< HEAD
 						<div id="map"
 							style="width: 100%; height: 100%; position: relative; overflow: hidden;"></div>
 >>>>>>> 59946f9... 유창오| main 메인텍스트 디자인 수정, memberlist 테이블 및 pagination 디자인 수정
+=======
+						<div id="map" style="width: 100%; height: 100%; position: relative; overflow: hidden;"></div>
+>>>>>>> 17a85c6... 유창오| main.jsp 필터링 버튼 디자인 수정
 
 <<<<<<< HEAD
                 <div id="menu_wrap" class="bg_white">
@@ -305,9 +342,8 @@
 									<div class="setLocation"></div>
 									<div class="setDistance">
 										<p id="rangeValue">${distance}km반경</p>
-										<input id="range" type="range" name="distance" min="1"
-											max="10" step="1" value="${distance}"
-											onchange="getRangeValue(value)"/>
+										<input id="range" type="range" name="distance" min="1" max="10" step="1"
+											value="${distance}" onchange="getRangeValue(value)" />
 									</div>
 									<div class="close-wrapper">
 										<input type="submit" value="적용">
@@ -324,12 +360,12 @@
 						src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0128abab124ce04ae17c622f465a5647&libraries=services,clusterer"></script>
 					<script src="resources/js/map.js"></script>
 					<script>
-                        setMarker("${mapy}", "${mapx}", "${distance}")
-                	var tmp="${address}"
-                	if(tmp==""){
-                		//location.reload();
-                	}
-                    </script>
+						setMarker("${mapy}", "${mapx}", "${distance}")
+						var tmp = "${address}"
+						if (tmp == "") {
+							//location.reload();
+						}
+					</script>
 					<!--  -->
 				</div>
 			</div>
@@ -345,20 +381,18 @@
 					<option value=32>숙박</option>
 					<option value=28>레포츠</option>
 				</select>
-				<form id="filterOptions">
-					<button type="button" onclick="setMyRealLocaion()">내 위치에서 알아보기</button>
-					<button type="button" onclick="deleteNoPhoto()">사진 있는 관광지만 보기</button>
-				</form>
+				<button type="button" onclick="setMyRealLocaion()">내 위치에서 알아보기</button>
+				<button type="button" onclick="deleteNoPhoto()">사진 있는 관광지만 보기</button>
 			</div>
 			<div class="main__orderOption"></div>
 		</div>
 		<div class="places">
 			<c:forEach var="place" items="${tourList }">
 				<div class="placeType${place.contentTypeId}">
-					<div class="places__place" onclick="location.href='placeDetail.do?id=${place.contentId}&type=${place.contentTypeId}'">
+					<div class="places__place"
+						onclick="location.href='placeDetail.do?id=${place.contentId}&type=${place.contentTypeId}'">
 						<c:if test="${place.image ne '' }">
-							<div class="place__image"
-								style="background-image: url('${place.image}')"></div>
+							<div class="place__image" style="background-image: url('${place.image}')"></div>
 							<div class="place__content1">
 								<h3 style="margin: 0;">${place.title }</h3>
 								<p style="margin: 0;">${place.address }</p>
@@ -407,6 +441,7 @@
             </div>
         </div>
 
+<<<<<<< HEAD
         <div class="footer">
             <p style="margin: 7px;">Copyright 2019. 공수래공수거. ALL RIGTHS RESERVED.</p>
         </div>
@@ -416,14 +451,21 @@
         const open = document.getElementById("open");
         const close = document.getElementById("close"); u7c
         const modal = document.querySelector(".modal-wrapper");
+=======
+	<script>
+		const open = document.getElementById("open");
+		const close = document.getElementById("close");
+		const modal = document.querySelector(".modal-wrapper");
+>>>>>>> 17a85c6... 유창오| main.jsp 필터링 버튼 디자인 수정
 
-        open.onclick = () => {
-            modal.style.display = "flex";
-        };
-        close.onclick = () => {
-            modal.style.display = "none";
-        };
+		open.onclick = () => {
+			modal.style.display = "flex";
+		};
+		close.onclick = () => {
+			modal.style.display = "none";
+		};
 
+<<<<<<< HEAD
         getRangeValue = (value) => {
             const rangeValue = document.getElementById("rangeValue");
             rangeValue.innerHTML = value;
@@ -486,3 +528,107 @@
 
 </html>
 >>>>>>> 58a8b90... 유창오| main 세부디자인 사소한변경 및 이미지 없는 장소는 안보이게 하기 작업중
+=======
+		getRangeValue = (value) => {
+			const rangeValue = document.getElementById("rangeValue");
+			setRadius(value);
+			rangeValue.innerHTML = value + "km 반경";
+		}
+	</script>
+
+	<script type="text/javascript">
+		function setMyRealLocaion() {
+			if (navigator.geolocation) {
+				// GeoLocation을 이용해서 접속 위치를 얻어옵니다
+				navigator.geolocation.getCurrentPosition(function (position) {
+					var lat = position.coords.latitude, // 위도
+
+						lon = position.coords.longitude; // 경도
+
+					var form_data = {
+						lat: lat,
+						lon: lon
+					};
+					$.ajax({
+						type: "POST",
+						url: "setLocation.do",
+						data: form_data,
+						success: function (data) {
+							if (data.chk == 1) {
+								alert("현재 위치를 사용할 수 없습니다.");
+							} else if (data.check != 1) {
+								var latlng = new kakao.maps.LatLng(lat, lon);
+								searchDetailAddrFromCoords(latlng, function (result, status) {
+									var tmp_address = result[0].address.address_name;
+
+
+									var form_data = {
+										address: tmp_address
+									};
+									$.ajax({
+										type: "POST",
+										url: "setAddress.do",
+										data: form_data,
+										success: function (data) {
+											//alert(data);
+											location.href = "main.do";
+										},
+										error: function (error) {
+											alert("주소 표시 에러가 발생했습니다.");
+										}
+									});
+
+
+
+								});
+							}
+						},
+						error: function (error) {
+							alert("error");
+						}
+					});
+				});
+
+			} else { // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
+				message = 'geolocation을 사용할수 없어요..'
+			}
+		}
+
+		deleteNoPhoto = (event) => {
+			const noImages = document.querySelectorAll('#noImage');
+			console.log(noImages);
+			for (let i = 0; i < noImages.length; i++) {
+				let noImage = noImages[i].parentNode;
+				noImage.style.display = "none";
+			}
+		}
+	</script>
+	<script type="text/javascript">
+		window.onload = changeSelect();
+		function changeSelect() {
+			var select = document.getElementById("showOption");
+			var selectValue = select.options[select.selectedIndex].value;
+			//alert(document.getElementsByClassName("placeType"+selectValue)[0].value);
+			var num = [12, 14, 15, 39, 38, 25, 32, 28];
+			for (var i = 0; i < num.length; i++) {
+				var elements = document.getElementsByClassName("placeType" + num[i]);
+				for (var j = 0; j < elements.length; j++) {
+					elements[j].style.display = "block";
+				}
+			}
+			if (selectValue != 0) {
+				for (var i = 0; i < num.length; i++) {
+					if (num[i] != selectValue) {
+						var elements = document.getElementsByClassName("placeType" + num[i]);
+						for (var j = 0; j < elements.length; j++) {
+							elements[j].style.display = "none";
+						}
+					}
+				}
+			}
+		}
+	</script>
+</body>
+
+</html>
+>>>>>>> 17a85c6... 유창오| main.jsp 필터링 버튼 디자인 수정

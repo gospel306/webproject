@@ -191,6 +191,30 @@ input[id="allPlaces"] {
 
 /* ---------------- */
 
+.main__options {
+    text-align: center;
+}
+
+#showOption {
+    display: block;
+}
+
+.main__options button {
+    border-radius: 8px;
+    border: 1px solid black;
+    background: white;
+    padding: 6px;
+    margin: 5px;
+    font-family: 'Song Myung';
+    font-size: 14px;
+}
+
+.main__options button:hover {
+    box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.2);
+    background: darkcyan;
+    color: white;
+}
+
 .main__orderOption {
     margin: 1vw;
     font-family: 'Song Myung';
