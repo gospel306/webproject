@@ -323,6 +323,18 @@ input[id="allPlaces"] {
         border-radius: 16px;
         cursor: zoom-in;
     }
+    .places__place {
+        font-family: 'Song Myung';
+        width: 400px;
+        height: 250px;
+        margin: 15px auto 15px auto;
+        border: 2px solid darkslategray;
+        border-radius: 14px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
     .places__place .place__image {
         width: 100%;
         height: 100%;
@@ -330,10 +342,10 @@ input[id="allPlaces"] {
     }
     .place__content1 {
         padding: 15px 15px 15px 15px;
-        font-size: 22px;
+        font-size: 18px;
     }
     .place__content2 {
         padding: 15px 15px 15px 15px;
-        font-size: 22px;
+        font-size: 18px;
     }
 }
