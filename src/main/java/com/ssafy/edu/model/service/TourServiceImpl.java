@@ -198,6 +198,11 @@ public class TourServiceImpl implements ITourService{
 		return dao.getContentType();
 	}
 
+	@Override
+	public TourInfoVo getTourInfoByCId(int contentId) {
+		return dao.getTourInfoByCId(contentId);
+	}
+
 	
 
 

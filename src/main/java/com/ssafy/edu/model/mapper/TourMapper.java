@@ -34,6 +34,7 @@ public interface TourMapper {
 //		//현재위치, 반경에 따른 관광정보 반환(이용 불가능)+정렬
 //		List<TourInfoVo> getUnAvailableTourInfoByHere(int mapx,int mapy,int distance);
 		//지역에 따른 관광정보 반환
+		TourInfoVo getTourInfoByCId(int contentId);
 		List<TourInfoVo> getTourInfoByLocation(@Param("areaCode") int areaCode,@Param("sigunguCode")int sigunguCode);
 		//Id로? 상세정보 반환
 		DetailCourse getDetailCourseByCId(@Param("contentId") int contentId);
