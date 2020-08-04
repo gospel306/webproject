@@ -85,7 +85,7 @@
 				</div>
 			</form>
 
-			<div style="min-height: 400px; border: 1px solid black; border-radius: 8px;">
+			<div style="min-height: 350px; border-top: 1px solid black; border-bottom: 1px solid black; margin: 10px 0;">
 				<div id="table">
 					<div class="row">
 						<span class="cell table__id">아이디</span>
@@ -110,7 +110,7 @@
 									<c:otherwise>
 										<button
 											onclick="location.href='updateMemberType.do?id=${member.id}'">승급</button>
-										<button onclick="location.href='deleteMember.do?id=${member.id}'">강제탈퇴</button>
+										<button onclick="location.href='deleteMember.do?id=${member.id}'">탈퇴</button>
 									</c:otherwise>
 								</c:choose>
 							</span>
@@ -119,7 +119,7 @@
 				</div>
 			</div>
 
-			<div class="pagination">
+			<div class="pagination" style="display: flex; align-items: center; justify-content: center;">
 				<!-- 이전버튼 -->
 				<c:if test="${pagination.prev }">
 					<a href="#"

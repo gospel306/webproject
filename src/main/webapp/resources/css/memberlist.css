@@ -101,8 +101,6 @@ li.header__dropdown {
 
 /* ---------------- */
 
-/* SearchForm */
-
 .center {
     text-align: center;
 }
@@ -142,6 +140,8 @@ select {
     width: 120px;
     height: 24.4px;
     margin-right: 0;
+    padding: 0 8px;
+    font-family: 'San Serif KR';
 }
 
 #searchForm__submit {
@@ -154,9 +154,14 @@ select {
 /* -------------------- */
 
 #table {
+    font-size: 11px;
     display: table;
     width: 100%;
     /* min-height: 400px; */
+}
+
+button {
+    font-size: 11px;
 }
 
 .row {
@@ -171,26 +176,19 @@ select {
 }
 
 .table__id {
-    width: 50%;
+    width: 15%;
 }
-
 .table__name {
-    display: none;
-    /* width: 10%; */
+    width: 10%;
 }
-
 .table__phone {
-    display: none;
-    width: 25%;
+    width: 20%;
 }
-
 .table__email {
-    display: none;
-    /* width: 33.3%; */
+    width: 15%;
 }
-
 .table__userType {
-    width: 50%;
+    width: 15%;
 }
 
 .table__wrapper {
@@ -263,21 +261,10 @@ select {
         min-width: 55px;
         height: 55px;
     }
-    .table__id {
-        width: 15%;
+    #table {
+        font-size: 15px;
     }
-    .table__name {
-        display: inline;
-        width: 10%;
-    }
-    .table__phone {
-        display: inline;
-        width: 25%;
-    }
-    .table__email {
-        width: 25%;
-    }
-    .table__userType {
-        width: 25%;
+    button {
+        font-size: 15px;
     }
 }
