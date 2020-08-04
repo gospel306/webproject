@@ -142,7 +142,7 @@
     <title>Awesome Place</title>
     <link rel="stylesheet" href="resources/css/main.css">
 
-	<link rel="stylesheet" href="resources/css/map.css">    
+    <link rel="stylesheet" href="resources/css/map.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
@@ -176,7 +176,7 @@
                         근처
                         <span class="subText__distance">${distance }km</span>
                     </p>
-                    
+
                     <button id="open">다른 위치에서 알아보기</button>
                 </div>
             </div>
@@ -191,7 +191,8 @@
                         </div>
                         <div class="setDistance">
                             <p id="rangeValue">5</p>
-                            <input id="range" type="range" name="distance" min="1" max="10" step="1" value="5" onchange="getRangeValue(value)">
+                            <input id="range" type="range" name="distance" min="1" max="10" step="1" value="5"
+                                onchange="getRangeValue(value)">
                         </div>
                         <div class="close-wrapper">
                             <input type="submit" value="검색">
@@ -201,32 +202,56 @@
                 </div>
             </div>
             <div class="map_wrap">
-    <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
+                <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
 
-    <div id="menu_wrap" class="bg_white">
-        <div class="option">
-            <div>
-                <form onsubmit="searchPlaces(); return false;">
-                    키워드 : <input type="text" value="" id="keyword" size="15"> 
-                    <button type="submit">검색하기</button> 
-                </form>
+                <div id="menu_wrap" class="bg_white">
+                    <div class="option">
+                        <div>
+                            <form onsubmit="searchPlaces(); return false;">
+                                키워드 : <input type="text" value="" id="keyword" size="15">
+                                <button type="submit">검색하기</button>
+                            </form>
+                        </div>
+                    </div>
+                    <hr>
+                    <ul id="placesList"></ul>
+                    <div id="pagination"></div>
+                </div>
             </div>
-        </div>
-        <hr>
-        <ul id="placesList"></ul>
-        <div id="pagination"></div>
-    </div>
-</div>
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0128abab124ce04ae17c622f465a5647&libraries=services,clusterer"></script>
-    <script src="resources/js/map.js"></script>
-    <script>
-    setMarker("${mapy}","${mapx}")
-    </script>
-            
+            <script type="text/javascript"
+                src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0128abab124ce04ae17c622f465a5647&libraries=services,clusterer"></script>
+            <script src="resources/js/map.js"></script>
+            <script>
+                setMarker("${mapy}", "${mapx}")
+            </script>
+
             <div class="main__options">
                 <div class="main__showPlacesOption">
+<<<<<<< HEAD
                     <input type="checkbox" name="" id="allPlaces">
                     <label for="allPlaces">모든 관광지 보기</label>
+=======
+                    <form id="filterOptions">
+                        <input
+                            class="filter__input"
+                            type="checkbox" 
+                            id="allPlaces" 
+                            name="allPlaces"
+                        >
+                        <label class="filter__label" for="allPlaces">모든 관광지 보기</label>
+
+                        <input
+                             class="filter__input"
+                             type="checkbox"
+                             id="myLocation"
+                             name="myLocation"
+                             onclick="setMyRealLocaion()"
+                        >
+                        <label class="filter__label" for="myLocation" onclick="setMyRealLocaion()">내 위치 켜기</label>
+
+                        <button type="button" onclick="deleteNoPhoto()">사진 없는거 없애자</button>
+                    </form>
+>>>>>>> 58a8b90... 유창오| main 세부디자인 사소한변경 및 이미지 없는 장소는 안보이게 하기 작업중
                 </div>
                 <div class="main__orderOption">
 
@@ -234,27 +259,24 @@
             </div>
             <div class="places">
                 <c:forEach var="place" items="${tourList }">
-                    <div class="places__place" onclick="location.href='placeDetail.do?id=${place.contentId}&type=${place.contentTypeId}'">
-                	<c:if test="${place.image ne '' }">
-                        <div
-                        	class="place__image"
-                        	style="background-image: url('${place.image}')"
-                    	></div>
-                        <div class="place__content1">
-                        	<p style="margin: 0;">${place.title }</p>
-                        	<p style="margin: 0;">${place.address }</p>
-                    	</div>
-                    </c:if>
-                	<c:if test="${place.image eq '' }">
-                    	<div
-                        	class="place__image"
-                        	style="background-image: url('http://www.owlenergy.biz/images/owl_img/slide/nopicture.jpg')"
-                    	></div>
-                        <div class="place__content2">
-                        	<p style="margin: 0;">${place.title }</p>
-                        	<p style="margin: 0;">${place.address }</p>
-                    	</div>
-                    </c:if>                        
+                    <div class="places__place"
+                        onclick="location.href='placeDetail.do?id=${place.contentId}&type=${place.contentTypeId}'">
+                        <c:if test="${place.image ne '' }">
+                            <div class="place__image" style="background-image: url('${place.image}')"></div>
+                            <div class="place__content1">
+                                <p style="margin: 0; font-weight: bold;">${place.title }</p>
+                                <p style="margin: 0;">${place.address }</p>
+                            </div>
+                        </c:if>
+                        <c:if test="${place.image eq '' }">
+                            <div id="noImage" class="place__image"
+                                style="background-image: url('http://www.owlenergy.biz/images/owl_img/slide/nopicture.jpg')">
+                            </div>
+                            <div class="place__content2">
+                                <p style="margin: 0;">${place.title }</p>
+                                <p style="margin: 0;">${place.address }</p>
+                            </div>
+                        </c:if>
                     </div>
                 </c:forEach>
             </div>
@@ -267,7 +289,7 @@
 
     <script>
         const open = document.getElementById("open");
-        const close = document.getElementById("close");u7c 
+        const close = document.getElementById("close"); u7c
         const modal = document.querySelector(".modal-wrapper");
 
         open.onclick = () => {
@@ -282,7 +304,63 @@
             rangeValue.innerHTML = value;
         }
     </script>
+<<<<<<< HEAD
 </body>
 
 </html>
 >>>>>>> e1e11f6... 유창오| main.jsp, placeDetail.jsp 상세디자인 변경
+=======
+
+    <script type="text/javascript">
+        function setMyRealLocaion() {
+            if ($("#checkbox").prop("checked") == true) {
+                if (navigator.geolocation) {
+                    // GeoLocation을 이용해서 접속 위치를 얻어옵니다
+                    navigator.geolocation.getCurrentPosition(function (position) {
+                        var lat = position.coords.latitude, // 위도
+
+                            lon = position.coords.longitude; // 경도
+
+                        var form_data = {
+                            lat: lat,
+                            lon: lon
+                        };
+                        $.ajax({
+                            type: "POST",
+                            url: "setLocation.do",
+                            data: form_data,
+                            success: function (data) {
+                                if (data.chk == 1) {
+                                    alert("현재 위치를 사용할 수 없습니다.");
+                                } else if (data.check != 1) {
+                                    location.href = "main.do";
+                                }
+                            },
+                            error: function (error) {
+                                alert("error");
+                            }
+                        });
+                    });
+
+                } else { // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
+                    message = 'geolocation을 사용할수 없어요..'
+                }
+            }
+        }
+
+        deleteNoPhoto = (event) => {
+            // event.preventDefault();
+            const temp1 = document.getElementById('noImage')
+            // const temp = document.querySelector('.noImage').parentNode;
+            console.log(temp1)
+            temp1.style.display = "none";
+            // console.log(temp);
+            const noImages = temp.map((place) => {
+                console.log(place);
+            })
+        }
+    </script>
+</body>
+
+</html>
+>>>>>>> 58a8b90... 유창오| main 세부디자인 사소한변경 및 이미지 없는 장소는 안보이게 하기 작업중
