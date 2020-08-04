@@ -220,12 +220,48 @@ input[id="availablePlaces"] {
     border-radius: 14px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
+    background-repeat: no-repeat;
+    background-size: cover;
+
 }
 
-.place__image {
-    width: 100%;
-    height: 120px;
-    border-radius: 13px 13px 0 0;
+.place__detail {
+    margin: 15px;
+    padding: 10px;
+    background-color: lightseagreen;
+    color: white;
+    border-radius: 10px;
+    opacity: 0.8;
+    width: 150px;
+}
+
+.places__place {
+    position: relative;
+    z-index: 1;
+}
+
+.places__place .place__image {
+    width: 300px;
+    height: 150px;
+    border-radius: 11px;
+    background-size: cover;
+    z-index: -1;
+    position: absolute;
+}
+
+.place__content {
+    font-family: 'Song Myung';
+    font-size: 13px;
+    /* text-align: left; */
+    padding: 15px 15px 15px 7px;
+
+    background-color: white;
+    opacity: 0.7;
+    min-width: 130px;
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    margin: 10px;
 }
 
 .places__place:hover {
@@ -259,7 +295,7 @@ input[id="availablePlaces"] {
         border-radius: 16px;
         cursor: zoom-in;
     }
-    .places__place {
+    /* .places__place {
         font-family: 'Song Myung';
         width: 500px;
         height: 300px;
@@ -270,5 +306,23 @@ input[id="availablePlaces"] {
         width: 100%;
         height: 240px;
         border-radius: 15px 15px 0 0;
+    } */
+
+    .places__place {
+        width: 500px;
+        height: 300px;
+        /* margin: 15px auto 15px auto; */
+    }
+
+    .places__place .place__image {
+        width: 100%;
+        height: 100%;
+        border-radius: 11px;
+    }
+    
+    .place__content {
+        /* text-align: right; */
+        padding: 15px 15px 15px 15px;
+        font-size: 22px;
     }
 }
