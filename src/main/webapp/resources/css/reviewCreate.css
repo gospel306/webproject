@@ -101,12 +101,124 @@ li.header__dropdown {
 
 /* ---------------- */
 
-.bg__image {
-    background-image: url("");
-    filter: blur(13px);
-    -webkit-filter: blur(10px);
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.inputForm {
+    text-align: center;
+    margin: 15px;
+    padding: 5px;
+}
+
+.contentInput {
+    text-align: center;
+}
+
+.contentInput textarea {
+    border-radius: 10px;
+    padding: 15px;
+    font-family: 'Nanum Myeongjo';
+    font-size: 1.1em;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.contentInput button {
+    /* margin-top: 15px; */
+    background: white;
+    border: 1px solid black;
+    border-radius: 8px;
+    width: 90px;
+    height: 35px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.contentInput button:hover {
+    box-shadow: 3px 3px 3px rgba(214, 209, 209, 0.5);
+}
+
+form .stars {
+    background: url("stars.png") repeat-x 0 0;
+    width: 150px;
+    margin: 10px auto;
+}
+
+form .stars input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+form .stars input[type="radio"].star-5:checked~span {
+    width: 100%;
+}
+
+form .stars input[type="radio"].star-4:checked~span {
+    width: 80%;
+}
+
+form .stars input[type="radio"].star-3:checked~span {
+    width: 60%;
+}
+
+form .stars input[type="radio"].star-2:checked~span {
+    width: 40%;
+}
+
+form .stars input[type="radio"].star-1:checked~span {
+    width: 20%;
+}
+
+form .stars label {
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: 0!important;
+    padding: 0!important;
+    text-indent: -999em;
+    float: left;
+    position: relative;
+    z-index: 10;
+    background: transparent!important;
+    cursor: pointer;
+}
+
+form .stars label:hover~span {
+    background-position: 0 -30px;
+}
+
+form .stars label.star-5:hover~span {
+    width: 100% !important;
+}
+
+form .stars label.star-4:hover~span {
+    width: 80% !important;
+}
+
+form .stars label.star-3:hover~span {
+    width: 60% !important;
+}
+
+form .stars label.star-2:hover~span {
+    width: 40% !important;
+}
+
+form .stars label.star-1:hover~span {
+    width: 20% !important;
+}
+
+form .stars span {
+    display: block;
+    width: 0;
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 30px;
+    background: url("stars.png") repeat-x 0 -60px;
+    -webkit-transition: -webkit-width 0.5s;
+    -moz-transition: -moz-width 0.5s;
+    -ms-transition: -ms-width 0.5s;
+    -o-transition: -o-width 0.5s;
+    transition: width 0.5s;
 }
