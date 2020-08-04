@@ -293,6 +293,7 @@
 					<div class="map_wrap">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 						<div id="map"
 							style="width: 100%; height: 100%; position: relative; overflow: hidden;"></div>
 >>>>>>> 59946f9... 유창오| main 메인텍스트 디자인 수정, memberlist 테이블 및 pagination 디자인 수정
@@ -355,6 +356,9 @@
 						<div id="menu_wrap" class="bg_white">
 =======
 						<div id="map" style="width: 100%; height: 300px; position: relative; overflow: hidden;"></div>
+=======
+						<div id="map" style=""></div>
+>>>>>>> cbb0e09... 유창오| 메인페이지 다른위치검색 모달창 사이즈 변경
 
 						<div id="menu_wrap" class="bg_white" style="margin: 10px;">
 >>>>>>> 26cabbf... 유창오| 헤더 오류해결 및 디자인 수정, 메인페이지 디자인 수정
