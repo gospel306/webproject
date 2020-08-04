@@ -6,12 +6,21 @@
 
 <head>
 	<meta charset="UTF-8">
+<<<<<<< HEAD
+=======
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+>>>>>>> e3efd00... 유창오| main, placeDetail 디자인 사소한 수정
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Awesome Place</title>
 	<link rel="stylesheet" href="resources/css/detail.css">
+<<<<<<< HEAD
 
 
+=======
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+>>>>>>> e3efd00... 유창오| main, placeDetail 디자인 사소한 수정
 	<script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
 </head>
 
@@ -19,17 +28,40 @@
 	<div class="wrapper__main">
 		<ul class="nav">
 			<li>
+<<<<<<< HEAD
 				<a href="#" class="header__logo">
+=======
+				<a href="main.do" class="header__logo">
+>>>>>>> e3efd00... 유창오| main, placeDetail 디자인 사소한 수정
 					Awesome Place
 				</a>
 			</li>
 
 			<li class="header__dropdown">
 				<a href="javascript:void(0)" class="header__button">Menu</a>
+<<<<<<< HEAD
 				<div class="header__content">
 					<a href="">SignIn</a>
 					<a href="">SignUp</a>
 				</div>
+=======
+				<c:if test="${sessionScope.ID eq null}">
+					<div class="header__content">
+						<a href="loginForm.do">SignIn</a>
+						<a href="signUpForm.do">SignUp</a>
+					</div>
+				</c:if>
+				<c:if test="${sessionScope.ID ne null}">
+					<div class="header__content">
+						<a href="logout.do">logout</a>
+						<a href="myinfo.do">MyInfo</a>
+						<c:if test="${sessionScope.memberType eq 'admin'}">
+							<a href="memberlist.do">memberlist</a>
+							<a href="insertplace.do">insertplace</a>
+						</c:if>
+					</div>
+				</c:if>
+>>>>>>> e3efd00... 유창오| main, placeDetail 디자인 사소한 수정
 			</li>
 		</ul>
 
@@ -62,17 +94,71 @@
 				</div>
 
 				<div>
+<<<<<<< HEAD
 					<a>
 						<i class="far fa-edit"></i>
 						<span class="icon_text">후기작성</span>
+=======
+					<c:if test="${empty ID}">
+						<a onClick='nosess()'>
+							<i class="far fa-edit"></i>
+							<span class="icon_text">후기작성</span>
+						</a>
+
+					</c:if>
+					<c:if test="${not empty ID}">
+						<a onClick='goReviewCreate()'>
+							<i class="far fa-edit"></i>
+							<span class="icon_text">후기작성</span>
+						</a>
+
+					</c:if>
+
+					<a onClick='share(); return false'>
+
+
+>>>>>>> e3efd00... 유창오| main, placeDetail 디자인 사소한 수정
 					</a>
 				</div>
 
 				<div>
+<<<<<<< HEAD
 					<a>
 						<i class="fas fa-share-alt-square"></i>
 						<span class="icon_text">공유하기</span>
 					</a>
+=======
+					<div id="sharebutton">
+						<i class="fas fa-share-alt-square"></i>
+						<span class="icon_text">공유하기</span>
+					</div>
+					<div id="sharehide" style="display:none,">
+						<span class="sociallink ml-1" style="text-decoration:none">
+							<a href="javascript:sendLinkFacebook()" title="페이스북으로 공유" style="text-decoration:none">
+								<img src="https://image.flaticon.com/icons/png/512/124/124010.png" width=36
+									alt="Facebook">
+							</a>
+						</span>
+						<span class="sociallink ml-1">
+							<a href="javascript:sendLinkTwitter()" title="트위터로 공유" style="text-decoration:none">
+								<img src="data:image/png;base64,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"
+									width=36 alt="Twitter">
+							</a>
+						</span>
+						<span class="sociallink ml-1">
+							<a href="javascript:sendLinkNaver()" title="네이버로 공유" style="text-decoration:none">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAMAAACahl6sAAAAVFBMVEX///8ezQA10hpv31yz7qk81CLE8rwozwth3Eyp7J5P2DiE5HSI5Xie6ZFH1i6N5n7q+ue98LT0/PKX6Inj+d9Y2kJz4GDQ9cp34WXd+Nn5/vjW9tEgwet2AAACFElEQVR4nO3c6U4CQRBF4apBFgHBlUXf/z2NcUVBupshVN2c85t0+JKJmevomBERERERERERERERERERERERERHRsUZdQcOezpmfEXLtJU37OWdyRshVEcRvejlncHmIP6tAFioQX6pA/FYF8v/P4EQQn6lAfK0C6VQgvlKB+EgFMlaBHL7tywbxOxXIoYsrHcSfVCAHpklCiMtA9u7ejBB/UIH4vQpkzzTJCdmze5NC/FEF8ufiygrxjQrEX1QgXcM5ISG/vlViyO7uzQwZV58TFLKze1NDfu7e3BCvPCcuZFp3TlzI9+7NDvl6JJcesqg5JzLk8+LKD/l4JCcAGapA3nevAsS3KpBOBfL2SE4D4msVyNjWGhCfF/291sUhg9nRj4xTQGY2LPlYfMjAblUgNleB2EIFcq8CsQcViE1VICYDOfkuIArEnlQgp15ccSB3KhCbqECs6C43A2SkArGVCsQ6FcijCsSO794kkPbdGw3SvHujQWypAmndvfEgjbs3HsRuVCBtuzcipGmahISU/bdyAkjLNIkJaZgmQSH1uzcoxAYqkOqLKyykdveGhdhGBVK5ewNDtiqQut0bGVK1e0NDan6pEhpS80guNqRi9waHlO/e4JDyaRIdUvxILjykdPfGhxQ+7z0npKcXfJXt3nO+KKyvV64tLv3qNiIiIiIiIiIiIiIiIiIiIiIiIiKVXgE/MyybmvxaBAAAAABJRU5ErkJggg=="
+									width=36 alt="Naver">
+							</a>
+						</span>
+						<span class="sociallink ml-1">
+							<a href="javascript:sendLinkKakao()" title="카카오스토리 공유" style="text-decoration:none">
+								<img src="https://lh3.googleusercontent.com/sTug7DxquD6aKrTTnsejKXYoK9CrvZo2i6HiuuSXwx5-hU5cm15DPU6ew_CRvji0WhTL"
+									width=36 alt="Kakao">
+							</a>
+						</span>
+					</div>
+>>>>>>> e3efd00... 유창오| main, placeDetail 디자인 사소한 수정
 				</div>
 			</div>
 
@@ -320,6 +406,7 @@
 <<<<<<< HEAD
 =======
 					<c:forEach var="review" items="${reviews}">
+<<<<<<< HEAD
 					<div class="review">
 						<div class="review__left">
 							<span>
@@ -406,18 +493,83 @@
 >>>>>>> f6a0b94... 유창오| 메인 페이지 필터링 옵션 버튼화, 리뷰 작성 페이지 star rating border  설정
 				</div>
 			</div>
+=======
+						<div class="review">
+							<div class="review__left">
+								<span>
+									<strong>${review.name}</strong>님
+								</span>
+							</div>
+							<div class="review__right" id="open${review.num}" style="cursor: pointer">
+								<div class="review__content" style="float: left;">
+									<span>${review.content}</span>
+									<c:set var="tempName" value="image${review.num}"></c:set>
 
-			<div class="footer">
-				<p style="margin: 7px;">Copyright 2019. 공수래공수거. ALL RIGTHS RESERVED.</p>
+								</div>
+								<div style="float: right; margin-top: 5px;">
+									<span style="font-weight: 200; font-size: 12px;">${review.time_Stamp}에
+										방문했습니다.</span>
+								</div>
+							</div>
+						</div>
+						<!-- 사용자 리뷰에 대한 상세정보 Modal -->
+						<div class="modal-wrapper" style="display: none;">
+							<div class="modal">
+								<div class="modal-title">
+									<h3 style="margin-bottom: 2px;">${review.name}님의 현충원 후기</h3>
+									<span
+										style="display: block; font-size: 12px; color: darkgray; margin: 0;">${review.time_Stamp}에
+										방문했습니다.</span>
+
+									<p>${review.content}</p>
+
+									<div clas="w3-container">
+										<div class="w3-content">
+											<c:forEach var="myImage" items="${requestScope[tempName]}">
+												<img class="modal-image" src="data:image/jpeg;base64,${myImage}">
+											</c:forEach>
+											
+											<div class="w3-row-padding w3-section">
+												
+											</div>
+										</div>
+									</div>
+
+									<div class="modal-images" style="max-width: 350px;">
+										<button>&#10094;</button>
+										<button>&#10095;</button>
+									</div>
+
+									<div class="close-wrapper">
+										<span id="close">닫기</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</c:forEach>
+				</div>
+>>>>>>> e3efd00... 유창오| main, placeDetail 디자인 사소한 수정
+
+				<div class="footer">
+					<p style="margin: 7px;">Copyright 2019. 공수래공수거. ALL RIGTHS RESERVED.</p>
+				</div>
 			</div>
 		</div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> e3efd00... 유창오| main, placeDetail 디자인 사소한 수정
 
 
 		<script type="text/javascript"
 			src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0128abab124ce04ae17c622f465a5647&libraries=services,clusterer">
 			</script>
 		<script>
+<<<<<<< HEAD
+=======
+			//주소-좌표 변환 객체를 생성합니다
+			var geocoder = new kakao.maps.services.Geocoder();
+>>>>>>> e3efd00... 유창오| main, placeDetail 디자인 사소한 수정
 			var infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
 			var container = document.getElementById('map');
 			var options = {
@@ -477,10 +629,78 @@
 						$("#dib").html(tmp);
 					}
 				});
+<<<<<<< HEAD
 			}       
 >>>>>>> 2903106... 유창오| 사용자 리뷰 클릭시 모달 팝업을 통해 상세정보 출력
 		</script>
 
+=======
+			}
+			function searchDetailAddrFromCoords(coords, callback) {
+				// 좌표로 법정동 상세 주소 정보를 요청합니다
+				geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
+			}
+			function findWay() {
+
+				var latlng = new kakao.maps.LatLng(${ tourInfo.mapy }, ${ tourInfo.mapx });
+				searchDetailAddrFromCoords(latlng, function (result, status) {
+					var detailAddr = result[0].address.address_name + "";
+					window.open("https://map.kakao.com/?sName=${address}&eName=" + detailAddr);
+				});
+			}
+		</script>
+		<script>
+			// 처음 열었으 때 숨김 표시
+			$(document).ready(function () {
+				$("#sharehide").toggle();
+			});
+			// 클릭시 숨김과 보여줌을 반복
+			$(function () {
+				$("#sharebutton").click(function () {
+					$("#sharehide").toggle();
+				});
+			});
+
+			function sendLinkFacebook() {
+				var raw_url = window.location.href;
+				var Facebook_root_url = "https://www.facebook.com/sharer/sharer.php?u=";
+				var Facebook_share_url = Facebook_root_url + encodeURI(raw_url);
+				window.open(Facebook_share_url,
+					'Share on Facebook',
+					'scrollbars=no, width=500, height=500');
+			}
+			function sendLinkTwitter() {
+				var raw_url = "{{ request.path }}";
+				var raw_title = "{{ post.title }}"
+				var twitter_root_url = "https://twitter.com/share?url="
+				var twitter_share_url = twitter_root_url + encodeURI(raw_url) + "&title=" + encodeURI(raw_title);
+				window.open(twitter_share_url,
+					'Share on twitter',
+					'scrollbars=no, width=500, height=500');
+			}
+			function sendLinkNaver() {
+				var raw_url = "{{ request.path }}";
+				var raw_title = "{{ post.title }}"
+				var naver_root_url = "http://share.naver.com/web/shareView.nhn?url="
+				var naver_share_url = naver_root_url + encodeURI(raw_url) + "&title=" + encodeURI(raw_title);
+				window.open(naver_share_url,
+					'Share on Naver',
+					'scrollbars=no, width=500, height=500');
+			}
+			function sendLinkKakao() {
+				console.log(1)
+				var raw_url = window.location.href;
+				var Kakao_root_url = "https://story.kakao.com/share?url=";
+				var Kakao_share_url = Kakao_root_url + encodeURI(raw_url);
+				window.open(Kakao_share_url,
+					'Share on Kakao',
+					'scrollbars=no, width=500, height=500');
+			}
+			function goReviewCreate() {
+				location.href = "createReview.do?id=${tourInfo.contentId}";
+			}
+		</script>
+>>>>>>> e3efd00... 유창오| main, placeDetail 디자인 사소한 수정
 </body>
 
 </html>

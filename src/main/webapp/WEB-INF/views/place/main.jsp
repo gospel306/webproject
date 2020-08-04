@@ -382,7 +382,7 @@
 					<option value=28>레포츠</option>
 				</select>
 				<button type="button" onclick="setMyRealLocaion()">내 위치에서 알아보기</button>
-				<button type="button" onclick="deleteNoPhoto()">사진 있는 관광지만 보기</button>
+				<button id="showPhoto" type="button" onclick="deleteNoPhoto()">사진 있는 관광지만 보기</button>
 			</div>
 			<div class="main__orderOption"></div>
 		</div>
