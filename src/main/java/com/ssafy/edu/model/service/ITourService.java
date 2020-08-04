@@ -21,6 +21,8 @@ import com.ssafy.edu.model.vo.TourInfoVo;
 public interface ITourService {
 	//전체 관광정보 반환(범위?)
 		List<TourInfoVo> getTourInfoList();
+		//아이디로 관광정보 반환
+		TourInfoVo getTourInfoByCId(int contentId);
 		//현재위치, 반경에 따른 관광정보 반환+정렬
 		List<TourInfoVo> getTourInfoByHere(double mapx,double mapy,double distance);
 		//현재위치, 반경에 따른 관광정보 반환(이용가능)+정렬

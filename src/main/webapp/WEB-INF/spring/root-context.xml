@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c465ac6... Revert "Revert "유창오| main.jsp 디자인 수정사항 반영""
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -9,8 +12,13 @@
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<bean id="bds" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+<<<<<<< HEAD
 		<property name="url" value="jdbc:mysql://192.168.31.138:3306/mydb?serverTimezone=UTC"/>
 		<property name="username" value="kim3"/>
+=======
+		<property name="url" value="jdbc:mysql://192.168.31.138:3306/mydb?serverTimezone=UTC&amp;allowMultiQueries=TRUE"/>
+		<property name="username" value="park"/>
+>>>>>>> c465ac6... Revert "Revert "유창오| main.jsp 디자인 수정사항 반영""
 		<property name="password" value="123123"/>
 	</bean>
 	
@@ -26,6 +34,7 @@
 	
 	<context:annotation-config/>
 	<context:component-scan base-package="com.ssafy.edu.model.dao"/>
+<<<<<<< HEAD
 	<context:component-scan base-package="com.ssafy.edu.model.service"/>
 	<context:component-scan base-package="com.ssafy.edu.model.vo"/>	
 </beans>
@@ -59,5 +68,9 @@
 	<context:component-scan base-package="com.ssafy.edu.model.dao"/>
 	<context:component-scan base-package="com.ssafy.edu.model.service"/>	
 </beans>
+=======
+	<context:component-scan base-package="com.ssafy.edu.model.service"/>	
+</beans>
+>>>>>>> c465ac6... Revert "Revert "유창오| main.jsp 디자인 수정사항 반영""
 
 >>>>>>> 077bb2e... Revert "유창오| main.jsp 디자인 수정사항 반영"

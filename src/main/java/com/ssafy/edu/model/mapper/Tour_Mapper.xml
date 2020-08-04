@@ -22,6 +22,9 @@ ORDER BY distance
 	List<TourInfoVo> getAvailableTourInfoByHere(int mapx,int mapy,int distance);
 	//현재위치, 반경에 따른 관광정보 반환(이용 불가능)+정렬
 	List<TourInfoVo> getUnAvailableTourInfoByHere(int mapx,int mapy,int distance); -->
+	<select id="getTourInfoByCId" resultType="TourInfoVo" parameterType="java.lang.Integer">
+	SELECT contentId,contentTypeId,mapx,mapy,overview,tel,address,title,zipcode,image,homepage,areacode,sigungucode FROM place WHERE contentid=#{contentId}
+	</select>
 	
 	<select id="getTourInfoByLocation" resultType="TourInfoVo" parameterType="java.lang.Integer">
 		<if test="sigunguCode==-1">

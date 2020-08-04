@@ -750,5 +750,11 @@ public class TourDAOImpl implements ITourDAO{
 		TourMapper mapper = template.getMapper(TourMapper.class);
 		return mapper.getContentType();
 	}
+
+	@Override
+	public TourInfoVo getTourInfoByCId(int contentId) {
+		TourMapper mapper = template.getMapper(TourMapper.class);
+		return mapper.getTourInfoByCId(contentId);
+	}
 	
 }
