@@ -232,8 +232,12 @@
 						<a href="logout.do">Signout</a>
 						<a href="myinfo.do">MyInfo</a>
 						<c:if test="${sessionScope.memberType eq 'admin'}">
+<<<<<<< HEAD
 							<a href="memberlist.do">MemberList</a>
 							<a href="insertplace.do">InsertPlace</a>
+=======
+							<a href="memberlist.do">AdminPage</a>
+>>>>>>> 1ebebab... 유창오| 헤더 메뉴 리스트 수정, 메인페이지 관광지 border-radius값 수정
 						</c:if>
 					</div>
 				</c:if>
