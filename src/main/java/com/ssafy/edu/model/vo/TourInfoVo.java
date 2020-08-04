@@ -13,13 +13,26 @@ public class TourInfoVo {
 	private String image;
 	private String homepage;
 	private double distance;
+<<<<<<< HEAD
+=======
+	private int areaCode;
+	private int sigunguCode;
+	
+>>>>>>> 077bb2e... Revert "유창오| main.jsp 디자인 수정사항 반영"
 	public TourInfoVo() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
+<<<<<<< HEAD
 	public TourInfoVo(int contentId, int contentTypeId, double mapx, double mapy, String overview, String tel,
 			String address, String title, String zipcode, String image, String homepage, double distance) {
+=======
+
+	public TourInfoVo(int contentId, int contentTypeId, double mapx, double mapy, String overview, String tel,
+			String address, String title, String zipcode, String image, String homepage, double distance, int areaCode,
+			int sigunguCode) {
+>>>>>>> 077bb2e... Revert "유창오| main.jsp 디자인 수정사항 반영"
 		super();
 		this.contentId = contentId;
 		this.contentTypeId = contentTypeId;
@@ -33,8 +46,16 @@ public class TourInfoVo {
 		this.image = image;
 		this.homepage = homepage;
 		this.distance = distance;
+<<<<<<< HEAD
 	}
 
+=======
+		this.areaCode = areaCode;
+		this.sigunguCode = sigunguCode;
+	}
+
+
+>>>>>>> 077bb2e... Revert "유창오| main.jsp 디자인 수정사항 반영"
 	public double getDistance() {
 		return distance;
 	}
@@ -110,13 +131,44 @@ public class TourInfoVo {
 		this.homepage = homepage;
 	}
 
+<<<<<<< HEAD
+=======
+	public int getAreaCode() {
+		return areaCode;
+	}
+
+
+	public void setAreaCode(int areaCode) {
+		this.areaCode = areaCode;
+	}
+
+
+	public int getSigunguCode() {
+		return sigunguCode;
+	}
+
+
+	public void setSigunguCode(int sigunguCode) {
+		this.sigunguCode = sigunguCode;
+	}
+
+
+>>>>>>> 077bb2e... Revert "유창오| main.jsp 디자인 수정사항 반영"
 	@Override
 	public String toString() {
 		return "TourInfoVo [contentId=" + contentId + ", contentTypeId=" + contentTypeId + ", mapx=" + mapx + ", mapy="
 				+ mapy + ", overview=" + overview + ", tel=" + tel + ", address=" + address + ", title=" + title
 				+ ", zipcode=" + zipcode + ", image=" + image + ", homepage=" + homepage + ", distance=" + distance
+<<<<<<< HEAD
 				+ "]";
 	}
 
+=======
+				+ ", areaCode=" + areaCode + ", sigunguCode=" + sigunguCode + "]";
+	}
+
+
+
+>>>>>>> 077bb2e... Revert "유창오| main.jsp 디자인 수정사항 반영"
 	
 }

@@ -33,7 +33,16 @@ public class DetailCourse extends DetailVo{
 	}
 	@Override
 	public String toString() {
+<<<<<<< HEAD
 		return "DetailCourse [distance=" + distance + ", takeTime=" + takeTime + "]";
+=======
+		return "DetailCourse [distance=" + distance + ", takeTime=" + takeTime + ", getContentId()=" + getContentId()
+				+ ", getAccomcount()=" + getAccomcount() + ", getChkbabycarriage()=" + getChkbabycarriage()
+				+ ", getChkcreditcard()=" + getChkcreditcard() + ", getChkpet()=" + getChkpet() + ", getParking()="
+				+ getParking() + ", getInfocenter()=" + getInfocenter() + ", getRestdate()=" + getRestdate()
+				+ ", toString()=" + super.toString() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
+				+ "]";
+>>>>>>> 077bb2e... Revert "유창오| main.jsp 디자인 수정사항 반영"
 	}
 	
 }
