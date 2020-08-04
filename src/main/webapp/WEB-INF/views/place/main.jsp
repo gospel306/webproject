@@ -398,20 +398,18 @@
 			</div>
 
 			<div class="main__options">
-				<span style="text-align: center;">
-					<select id="showOption" style="margin-right: 0;" onchange="changeSelect()">
-						<option value=0 selected="selected">전체</option>
-						<option value=12>관광지</option>
-						<option value=14>문화</option>
-						<option value=15>축제</option>
-						<option value=39>식당</option>
-						<option value=38>쇼핑</option>
-						<option value=32>숙박</option>
-						<option value=28>레포츠</option>
-					</select>
-				</span>
-				<button type="button" onclick="setMyRealLocaion()">내 위치에서 알아보기</button>
-				<button id="showPhoto" type="button" onclick="deleteNoPhoto()">사진 있는 관광지만 보기</button>
+				<button type="button" onclick="setMyRealLocaion()">현재위치에서 검색</button>
+				<button id="showPhoto" type="button" onclick="deleteNoPhoto()">사진 있는 정보만 보기</button>
+				<select id="showOption" style="display: inline;" onchange="changeSelect()">
+					<option value=0 selected="selected">전체</option>
+					<option value=12>관광지</option>
+					<option value=14>문화</option>
+					<option value=15>축제</option>
+					<option value=39>식당</option>
+					<option value=38>쇼핑</option>
+					<option value=32>숙박</option>
+					<option value=28>레포츠</option>
+				</select>
 			</div>
 			<div class="main__orderOption"></div>
 		</div>

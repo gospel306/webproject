@@ -27,6 +27,7 @@
 <body>
 	<div class="wrapper__main">
 		<ul class="nav">
+<<<<<<< HEAD
 			<li>
 <<<<<<< HEAD
 				<a href="#" class="header__logo">
@@ -45,6 +46,22 @@
 					<a href="">SignUp</a>
 				</div>
 =======
+=======
+			<li><a href="main.do" class="header__logo"> Awesome Place </a></li>
+
+			<li class="header__dropdown">
+				<c:if test="${sessionScope.memberType eq 'admin'}">
+					<a href="javascript:void(0)" class="header__button" style="padding: 15px 10px 15px 65px;">
+						Menu
+					</a>
+				</c:if>
+				<c:if test="${sessionScope.memberType ne 'admin'}">
+					<a href="javascript:void(0)" class="header__button" style="padding: 15px 10px 15px 28px;">
+						Menu
+					</a>
+				</c:if>
+
+>>>>>>> ddf5bd7... 유창오| 메인, 관광지 상세정보 디테일 디자인 일부 수정
 				<c:if test="${sessionScope.ID eq null}">
 					<div class="header__content">
 						<a href="loginForm.do">SignIn</a>
@@ -53,11 +70,14 @@
 				</c:if>
 				<c:if test="${sessionScope.ID ne null}">
 					<div class="header__content">
+<<<<<<< HEAD
 						<a href="logout.do">logout</a>
+=======
+						<a href="logout.do">Signout</a>
+>>>>>>> ddf5bd7... 유창오| 메인, 관광지 상세정보 디테일 디자인 일부 수정
 						<a href="myinfo.do">MyInfo</a>
 						<c:if test="${sessionScope.memberType eq 'admin'}">
-							<a href="memberlist.do">memberlist</a>
-							<a href="insertplace.do">insertplace</a>
+							<a href="memberlist.do">AdminPage</a>
 						</c:if>
 					</div>
 				</c:if>
