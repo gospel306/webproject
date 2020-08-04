@@ -317,6 +317,39 @@
 				</div>
 				<!-- 사용자 리뷰 목록 -->
 				<div class="reviews">
+<<<<<<< HEAD
+=======
+					<c:forEach var="review" items="${reviews}">
+					<div class="review">
+						<div class="review__left">
+							<span>
+								<strong>${review.name}</strong>님
+							</span>
+						</div>
+						<div class="review__right" id="open" style="cursor: pointer">
+							<div class="review__content" style="float: left;">
+								<span>${review.content}</span>
+							</div>
+							<div style="float: right; margin-top: 5px;">
+								<span style="font-weight: 200; font-size: 12px;">${review.time_Stamp}에 방문했습니다.</span>
+							</div>
+						</div>
+					</div>
+					<div class="modal-wrapper" style="display: none;">
+						<div class="modal">
+							<div class="modal-title">
+								<h3 style="margin-bottom: 2px;">${review.name}님의 현충원 후기</h3>
+								<span style="display: block; font-size: 12px; color: darkgray; margin: 0;">${review.time_Stamp}에 방문했습니다.</span>
+								<p>${review.content}</p>
+
+								<div class="close-wrapper">
+									<span id="close">닫기</span>
+								</div>
+							</div>
+						</div>
+					</div>			
+					</c:forEach>
+>>>>>>> dc7d6b8... 유창오| 사용자 리뷰 모달 버튼 크기 조정
 					<div class="review">
 						<div class="review__left">
 							<span>
