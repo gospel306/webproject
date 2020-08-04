@@ -19,11 +19,15 @@
 	<title>Awesome Place</title>
 	<link rel="stylesheet" href="resources/css/detail.css">
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 >>>>>>> e3efd00... 유창오| main, placeDetail 디자인 사소한 수정
+=======
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+>>>>>>> 474ea6e... 유창오| 슬라이드쇼 디버깅중
 	<script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
 </head>
 
@@ -513,12 +517,33 @@
 									</span>
 									<p style="font-size: 15px;">${review.content}</p>
 
-									<div id="close${review.num}" class="close-wrapper">
-										<span id="close">닫기</span>
+									<div class="w3-content" style="max-width: 340px;">
+										<c:set var="tempName" value="image${review.num}"></c:set>
+
+										<c:forEach var="myImage" items="${requestScope[tempName]}" varStatus="status">
+											<c:if test="${status.count eq 2 }">
+												<img class="mySlides" src="data:image/jpeg;base64,${myImage}"
+													style="width: 100%; display: block;">
+											</c:if>
+											<c:if test="${status.count ne 2 }">
+												<img class="mySlides" src="data:image/jpeg;base64,${myImage}"
+													style="width: 100%; display: none;">
+											</c:if>
+										</c:forEach>
+
+										<div class="w3-row-padding w3-section">
+											<c:forEach var="myImage" items="${requestScope[tempName]}" varStatus="status">
+												<div class="w3-col s4">
+													<img class="demo w3-opacity w3-hover-opacity-off" src="data:image/jpeg;base64,${myImage}"
+														style="width: 100%; height: 80px; cursor: pointer;" onclick="currentDiv(${status.count})">
+												</div>
+											</c:forEach>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
+<<<<<<< HEAD
 					</c:forEach>
 <<<<<<< HEAD
 >>>>>>> dc7d6b8... 유창오| 사용자 리뷰 모달 버튼 크기 조정
@@ -638,6 +663,15 @@
 					<p style="margin: 7px;">Copyright 2019. 공수래공수거. ALL RIGTHS RESERVED.</p>
 				</div>
 			</div>
+=======
+				</c:forEach>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer">
+			<p style="margin: 7px;">Copyright 2019. 공수래공수거. ALL RIGTHS RESERVED.</p>
+>>>>>>> 474ea6e... 유창오| 슬라이드쇼 디버깅중
 		</div>
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -833,6 +867,27 @@
 					}
 				}
 			}, false);
+		}
+
+		// 사용자가 남긴 리뷰 사진들 슬라이드쇼
+		function currentDiv(n) {
+			showDivs(slideIndex = n);
+		}
+
+		function showDivs(n) {
+			var i;
+			var x = document.getElementsByClassName("mySlides");
+			var dots = document.getElementsByClassName("demo");
+			if (n > x.length) { slideIndex = 1 }
+			if (n < 1) { slideIndex = x.length }
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";
+			}
+			for (i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+			}
+			x[slideIndex-1].style.display = "block";
+			dots[slideIndex-1].className += " w3-opacity-off";
 		}
 
 		function nosess() {
