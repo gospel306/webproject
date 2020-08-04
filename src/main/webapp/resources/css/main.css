@@ -204,7 +204,7 @@ input[id="allPlaces"] {
     border: 1px solid black;
     background: white;
     padding: 6px;
-    margin: 5px;
+    margin: 5px 2px;
     font-family: 'Song Myung';
     font-size: 14px;
 }
@@ -344,6 +344,23 @@ input[id="allPlaces"] {
 
 .close-wrapper {
     text-align: right;
+}
+
+select {
+	font-family: 'Song Myung';
+    font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid black;
+    padding: 6px;
+    margin: 5px 2px;
+    text-align: center;
+    text-align-last: center;
+    width: 20%;
+}
+
+option {
+    /* text-align: center; */
+    padding-left: 40px;
 }
 
 @media(min-width: 720px) {
