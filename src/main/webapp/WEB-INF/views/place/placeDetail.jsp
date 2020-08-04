@@ -458,6 +458,7 @@
 					<c:forEach var="review" items="${reviews}">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 					<div class="review">
 						<div class="review__left">
 							<span>
@@ -469,16 +470,25 @@
 								<span>${review.content}</span>
 =======
 						<div class="review">
+=======
+						<div class="review" data-modal="open${review.num}" style="cursor: pointer">
+>>>>>>> 7149934... 유창오| Multiple Modals Open & Close 구현
 							<div class="review__left">
 								<span>
 									<strong>${review.name}</strong>님
 								</span>
 >>>>>>> 6631efa... 유창오| 사용자 리뷰 목록에 별점 정보 추가
 							</div>
-							<div class="review__right" id="open${review.num}" style="cursor: pointer">
+							<div class="review__right">
 								<div class="review__content" style="float: left;">
 									<span>${review.content}</span>
 								</div>
+<<<<<<< HEAD
+=======
+								<c:if test="${review.id eq ID}">
+									<a onclick="deleteReviewDetail(${review.num})">삭제하기</a>
+								</c:if>
+>>>>>>> 7149934... 유창오| Multiple Modals Open & Close 구현
 								<div style="float: right; margin-top: 5px; text-align: right;">
 									<span style="display: block;">
 										<c:if test="${review.star ne ''}">
@@ -494,7 +504,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="modal-wrapper" style="display: none;">
+						<div id="open${review.num}" class="modal-wrapper" style="display: none;">
 							<div class="modal">
 								<div class="modal-title">
 									<h3 style="margin-bottom: 2px;">${review.name}님의 현충원 후기</h3>
@@ -503,7 +513,7 @@
 									</span>
 									<p style="font-size: 15px;">${review.content}</p>
 
-									<div class="close-wrapper">
+									<div id="close${review.num}" class="close-wrapper">
 										<span id="close">닫기</span>
 									</div>
 								</div>
@@ -778,8 +788,6 @@
 >>>>>>> e3efd00... 유창오| main, placeDetail 디자인 사소한 수정
 =======
 	</div>
-
-
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0128abab124ce04ae17c622f465a5647&libraries=services,clusterer">
 		</script>
@@ -808,16 +816,25 @@
 		infowindow.open(map, marker);
 	</script>
 	<script>
-		// 사용자 리뷰 모달창 열기
-		const open = document.getElementById("open");
-		const close = document.getElementById("close");
-		const modal = document.querySelector(".modal-wrapper");
-		open.onclick = () => {
-			modal.style.display = "flex";
-		};
-		close.onclick = () => {
-			modal.style.display = "none";
-		};
+		// 사용자 리뷰 모달창 열기 & 닫기
+		var openBtns = document.getElementsByClassName("review");
+		var closeBtns = document.getElementsByClassName("close-wrapaper");
+		for (var i = 0; i < openBtns.length; i++) {
+			var openBtn = openBtns[i];
+			var closeBtn = closeBtns[i];
+
+			openBtn.addEventListener("click", function () {
+				var modal = document.getElementById(this.dataset.modal);
+				modal.style.display = "flex";
+
+				window.onclick = function (event) {
+					if (event.target == modal) {
+						modal.style.display = "none";
+					}
+				}
+			}, false);
+		}
+
 		function nosess() {
 			alert("로그인 후 이용해주세요!");
 		}
@@ -858,65 +875,72 @@
 		}
 	</script>
 	<script>
-        // 처음 열었으 때 숨김 표시
-        $(document).ready(function() {
-            console.log(2)
-            $("#sharehide").toggle();
-        });
-        // 클릭시 숨김과 보여줌을 반복
-        $(function (){ $("#sharebutton").click(function (){
-            console.log(3)
-            $("#sharehide").toggle();
-            });
-        });
-        function sendLinkFacebook(){
-            var typeid = "${typeId}";
-            var id = "${tourInfo.contentId}"
-            var raw_url = "http://192.168.50.1:8080/AwesomePlace/placeDetail.do?id="+id + "&type="+typeid;
-             var Facebook_root_url = "https://www.facebook.com/sharer/sharer.php?u=";
-            console.log(raw_url)
-            var Facebook_share_url = Facebook_root_url + encodeURI(raw_url);
-            window.open(Facebook_share_url,
-                        'Share on Facebook',
-                        'scrollbars=no, width=500, height=500');
-        }
-        function sendLinkTwitter(){
-            var raw_title = "${tourInfo.title}";
-            var typeid = "${typeId}";
-            var id = "${tourInfo.contentId}"
-            var raw_url = "http://192.168.50.1:8080/AwesomePlace/placeDetail.do?id="+ id + "&type="+typeid;
-            var twitter_root_url = "https://twitter.com/share?url=";
-            text = raw_url;
-            console.log(text);
-            var twitter_share_url = twitter_root_url+encodeURI(encodeURIComponent(raw_url)) + "&text=" +  "http://192.168.50.1:8080/AwesomePlace/placeDetail.do?id="+ id + decodeURI("%26") + "type="+typeid;;
-            window.open(twitter_share_url,
-                        'Share on twitter',
-                        'scrollbars=no, width=500, height=500');
-        }
-        function sendLinkNaver(){
-            var raw_title = "${tourInfo.title}";
-            var typeid = "${typeId}";
-            var id = "${tourInfo.contentId}"
-            var raw_url = "http://192.168.50.1:8080/AwesomePlace/placeDetail.do?id="+id + "&type="+typeid;
-            var naver_root_url = "https://share.naver.com/web/shareView.nhn?url=";
-            var naver_share_url = naver_root_url+encodeURI(encodeURIComponent(raw_url)) + "&title=" +encodeURI(encodeURIComponent(raw_title));
-            window.open(naver_share_url,
-                        'Share on Naver',
-                        'scrollbars=no, width=500, height=500');
-        }
-        function sendLinkKakao(){
-            var typeid = "${typeId}";
-            var id = "${tourInfo.contentId}"
-            var raw_url = "http://192.168.50.1:8080/AwesomePlace/placeDetail.do?id="+id + "&type="+typeid;
-            var Kakao_root_url = "https://story.kakao.com/share?url=";
-            var Kakao_share_url = Kakao_root_url + encodeURI(encodeURIComponent(raw_url));
-            window.open(Kakao_share_url,
-                        'Share on Kakao',
-                        'scrollbars=no, width=500, height=500');
-        }
+		// 처음 열었으 때 숨김 표시
+		$(document).ready(function () {
+			console.log(2)
+			$("#sharehide").toggle();
+		});
+		// 클릭시 숨김과 보여줌을 반복
+		$(function () {
+			$("#sharebutton").click(function () {
+				console.log(3)
+				$("#sharehide").toggle();
+			});
+		});
+		function sendLinkFacebook() {
+			var typeid = "${typeId}";
+			var id = "${tourInfo.contentId}"
+			var raw_url = "http://192.168.50.1:8080/AwesomePlace/placeDetail.do?id=" + id + "&type=" + typeid;
+			var Facebook_root_url = "https://www.facebook.com/sharer/sharer.php?u=";
+			console.log(raw_url)
+			var Facebook_share_url = Facebook_root_url + encodeURI(raw_url);
+			window.open(Facebook_share_url,
+				'Share on Facebook',
+				'scrollbars=no, width=500, height=500');
+		}
+		function sendLinkTwitter() {
+			var raw_title = "${tourInfo.title}";
+			var typeid = "${typeId}";
+			var id = "${tourInfo.contentId}"
+			var raw_url = "http://192.168.50.1:8080/AwesomePlace/placeDetail.do?id=" + id + "&type=" + typeid;
+			var twitter_root_url = "https://twitter.com/share?url=";
+			text = raw_url;
+			console.log(text);
+			var twitter_share_url = twitter_root_url + encodeURI(encodeURIComponent(raw_url)) + "&text=" + "http://192.168.50.1:8080/AwesomePlace/placeDetail.do?id=" + id + decodeURI("%26") + "type=" + typeid;;
+			window.open(twitter_share_url,
+				'Share on twitter',
+				'scrollbars=no, width=500, height=500');
+		}
+		function sendLinkNaver() {
+			var raw_title = "${tourInfo.title}";
+			var typeid = "${typeId}";
+			var id = "${tourInfo.contentId}"
+			var raw_url = "http://192.168.50.1:8080/AwesomePlace/placeDetail.do?id=" + id + "&type=" + typeid;
+			var naver_root_url = "https://share.naver.com/web/shareView.nhn?url=";
+			var naver_share_url = naver_root_url + encodeURI(encodeURIComponent(raw_url)) + "&title=" + encodeURI(encodeURIComponent(raw_title));
+			window.open(naver_share_url,
+				'Share on Naver',
+				'scrollbars=no, width=500, height=500');
+		}
+		function sendLinkKakao() {
+			var typeid = "${typeId}";
+			var id = "${tourInfo.contentId}"
+			var raw_url = "http://192.168.50.1:8080/AwesomePlace/placeDetail.do?id=" + id + "&type=" + typeid;
+			var Kakao_root_url = "https://story.kakao.com/share?url=";
+			var Kakao_share_url = Kakao_root_url + encodeURI(encodeURIComponent(raw_url));
+			window.open(Kakao_share_url,
+				'Share on Kakao',
+				'scrollbars=no, width=500, height=500');
+		}
 		function goReviewCreate() {
 			location.href = "createReview.do?id=" + ${ tourInfo.contentId };
 		}
+<<<<<<< HEAD
+=======
+		function deleteReviewDetail(num) {
+			location.href = "deleteReviewDetail.do?num=" + num + "&contentid=" + ${ tourInfo.contentId };
+		}
+>>>>>>> 7149934... 유창오| Multiple Modals Open & Close 구현
 	</script>
 >>>>>>> 6631efa... 유창오| 사용자 리뷰 목록에 별점 정보 추가
 </body>
