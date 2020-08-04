@@ -23,7 +23,7 @@
 					</a>
 				</c:if>
 				<c:if test="${sessionScope.memberType ne 'admin'}">
-					<a href="javascript:void(0)" class="header__button" style="padding: 15px 10px 15px 28px;">
+					<a href="javascript:void(0)" class="header__button" style="padding: 15px 10px 15px 29px;">
 						Menu
 					</a>
 				</c:if>

@@ -125,11 +125,30 @@
 					</a>
 				</div>
 
+<<<<<<< HEAD
 				<div>
 					<a>
 						<i class="far fa-heart"></i>
 						<span class="icon_text">가고싶어요</span>
 					</a>
+=======
+				<div id="dib">
+					<c:if test="${empty ID}">
+						<a onClick='nosess()' ; return 'false'> <i class="far fa-heart"></i>
+							<span class="icon_text">가고싶어요</span>
+						</a>
+					</c:if>
+					<c:if test="${not empty ID}">
+						<a onClick='dib(); return false'>
+							<c:if test="${check_dib eq true}">
+								<i class="fas fa-heart"></i>
+							</c:if>
+							<c:if test="${check_dib ne true}">
+								<i class="far fa-heart"></i>
+							</c:if> <span class="icon_text">가고싶어요</span>
+						</a>
+					</c:if>
+>>>>>>> 0d639cf... 유창오| 세부디자인 변경
 				</div>
 
 				<div>
@@ -488,11 +507,15 @@
 									<span>${review.content}</span>
 								</div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 								<c:if test="${review.id eq ID}">
 									<a onclick="deleteReviewDetail(${review.num})">삭제하기</a>
 								</c:if>
 >>>>>>> 7149934... 유창오| Multiple Modals Open & Close 구현
+=======
+								
+>>>>>>> 0d639cf... 유창오| 세부디자인 변경
 								<div style="float: right; margin-top: 5px; text-align: right;">
 									<span style="display: block;">
 										<c:if test="${review.star ne ''}">
@@ -505,6 +528,9 @@
 									<span style="font-weight: 200; font-size: 12px;">
 										${review.time_Stamp}에 방문했습니다.
 									</span>
+									<c:if test="${review.id eq ID}"><br>
+									<button style="color: black; border-radius: 10px; border: 1px solid black; background-color: white;" onclick="deleteReviewDetail(${review.num})">삭제하기</button>
+								</c:if>
 								</div>
 							</div>
 						</div>
@@ -520,6 +546,7 @@
 									<div class="w3-content" style="max-width: 340px;">
 										<c:set var="tempName" value="image${review.num}"></c:set>
 
+<<<<<<< HEAD
 										<c:forEach var="myImage" items="${requestScope[tempName]}" varStatus="status">
 											<c:if test="${status.count eq 2 }">
 												<img class="mySlides" src="data:image/jpeg;base64,${myImage}"
@@ -531,6 +558,9 @@
 											</c:if>
 										</c:forEach>
 
+=======
+										
+>>>>>>> 0d639cf... 유창오| 세부디자인 변경
 										<div class="w3-row-padding w3-section">
 											<c:forEach var="myImage" items="${requestScope[tempName]}" varStatus="status">
 												<div class="w3-col s4">
