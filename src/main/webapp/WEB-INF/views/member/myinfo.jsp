@@ -50,7 +50,7 @@
 		
 		<div class="main">
 			<div class="my__info">
-				<p>반갑습니다 ${member.name }님</p>
+				<p style="font-family: 'Song Myung';">반갑습니다 <strong>${member.name }</strong>님</p>
 				<img  onclick="location.href='infoPassCheck.do'"  src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4IiB2aWV3Qm94PSIwIDAgMjY4LjgzMiAyNjguODMyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNjguODMyIDI2OC44MzI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8cGF0aCBkPSJNMjY1LjE3MSwxMjUuNTc3bC04MC04MGMtNC44ODEtNC44ODEtMTIuNzk3LTQuODgxLTE3LjY3OCwwYy00Ljg4Miw0Ljg4Mi00Ljg4MiwxMi43OTYsMCwxNy42NzhsNTguNjYxLDU4LjY2MUgxMi41ICAgYy02LjkwMywwLTEyLjUsNS41OTctMTIuNSwxMi41YzAsNi45MDIsNS41OTcsMTIuNSwxMi41LDEyLjVoMjEzLjY1NGwtNTguNjU5LDU4LjY2MWMtNC44ODIsNC44ODItNC44ODIsMTIuNzk2LDAsMTcuNjc4ICAgYzIuNDQsMi40MzksNS42NCwzLjY2MSw4LjgzOSwzLjY2MXM2LjM5OC0xLjIyMiw4LjgzOS0zLjY2MWw3OS45OTgtODBDMjcwLjA1MywxMzguMzczLDI3MC4wNTMsMTMwLjQ1OSwyNjUuMTcxLDEyNS41Nzd6IiBmaWxsPSIjMDAwMDAwIi8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" />
 			</div>
 			
@@ -71,7 +71,7 @@
 				</div>
 					
 					
-					<div id="MyLike" class="tabcontent">
+					<div id="MyLike" class="tabcontent" style="text-align: center;">
 						<c:forEach items="${dib }" var="dib">
 							<div class="card" onclick="location.href='placeDetail.do?id=${dib.contentId}&type=${dib.contentTypeId}'">
 								<c:if test="${dib.image eq ''}">
@@ -87,10 +87,11 @@
 						</c:forEach>
 					</div>
 					
-					<div id="MyReview" class="tabcontent">
+					<div id="MyReview" class="tabcontent" style="text-align: center;">
 						<c:forEach items="${reviews }" var="review">
 							<div class="card">
 							  	<div class="card__header">
+<<<<<<< HEAD
 								<b>${review.title }</b>
 								<br/>
 								<c:forEach begin="1" end="${review.star }">
@@ -100,6 +101,22 @@
 								<div class="card__main">
 									<p>${review.content }</p>
 									<p>${review.time_Stamp }</p>
+=======
+								<c:if test="${review.star ne ''}">
+									<c:forEach begin="1" end="${review.star }">
+									 <img class="card__star" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA0MjYuNjY3IDQyNi42NjciIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQyNi42NjcgNDI2LjY2NzsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTJweCIgaGVpZ2h0PSI1MTJweCI+Cjxwb2x5Z29uIHN0eWxlPSJmaWxsOiNGQUM5MTc7IiBwb2ludHM9IjIxMy4zMzMsMTAuNDQxIDI3OS4yNDksMTQ0LjAxNyA0MjYuNjY3LDE2NS40MzYgMzIwLDI2OS40MSAzNDUuMTczLDQxNi4yMjYgMjEzLjMzMywzNDYuOTEgICA4MS40ODUsNDE2LjIyNiAxMDYuNjY3LDI2OS40MSAwLDE2NS40MzYgMTQ3LjQwOSwxNDQuMDE3ICIvPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
+									</c:forEach>
+								</c:if>
+								</div>
+								<div class="card__main">
+									<span class="card__content" style="font-size: 17px; display: block; margin: 10px 0;">
+											${review.content }
+									</span>
+									<p style="color: grey; font-size: 14px;">${review.time_Stamp }에 남긴 리뷰입니다.</p>
+									<button onclick="gotoDetail(${review.contentid})">관광지 바로가기</button>
+									<button onclick="deleteReview(${review.num})">리뷰 삭제하기</button>
+									
+>>>>>>> 4d7c7d0... 유창오| placeDetail, MyInfo 디자인 일부 수정
 								</div>
 							</div>
 						</c:forEach>
