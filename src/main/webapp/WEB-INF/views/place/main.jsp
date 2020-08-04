@@ -181,6 +181,7 @@
                         <span class="subText__distance">${distance }km</span>
                     </p>
 
+<<<<<<< HEAD
                     <button id="open">다른 위치에서 알아보기</button>
                 </div>
             </div>
@@ -207,6 +208,38 @@
             </div>
             <div class="map_wrap">
                 <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
+=======
+		<div class="main">
+			<div class="mainImage__container">
+				<img class="mainImage__image"
+					src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+					alt="mainImage" style="width: 100%;">
+				<div class="mainImage__text">
+					<c:if test="${not empty ID}">
+						<p class="mainImage__mainText">
+						<strong>${name}</strong>님을 위한 특별한 장소
+						</p>
+					</c:if>
+					<c:if test="${empty ID}">
+						<p class="mainImage__mainText">당신을 위한 특별한 장소</p>
+					</c:if>
+
+					<p class="mainImage__subText">
+						<span class="subText__location">${address}</span><br>
+						근처 
+						<span class="subText__distance">${distance }km</span>
+					</p>
+					<button id="open">다른 위치에서 알아보기</button>
+				</div>
+			</div>
+			<div class="modal-wrapper" style="display: none;">
+				<div class="modal">
+					<div class="modal-title">다른 위치에서 알아보기</div>
+					<!--  -->
+					<div class="map_wrap">
+						<div id="map"
+							style="width: 100%; height: 100%; position: relative; overflow: hidden;"></div>
+>>>>>>> 59946f9... 유창오| main 메인텍스트 디자인 수정, memberlist 테이블 및 pagination 디자인 수정
 
                 <div id="menu_wrap" class="bg_white">
                     <div class="option">
