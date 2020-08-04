@@ -17,15 +17,26 @@
 <body>
 	<div class="wrapper__main">
 		<!-- 네비게이션 바 -->
+		<div class="wrapper__main">
 		<ul class="nav">
-			<li>
-				<a href="main.do" class="header__logo">
-					Awesome Place
-				</a>
-			</li>
+			<li><a href="main.do" class="header__logo"> Awesome Place </a></li>
 
 			<li class="header__dropdown">
+<<<<<<< HEAD
 				<a href="javascript:void(0)" class="header__button">Menu</a>
+=======
+				<c:if test="${sessionScope.memberType eq 'admin'}">
+					<a href="javascript:void(0)" class="header__button" style="padding: 15px 10px 15px 65px;">
+						Menu
+					</a>
+				</c:if>
+				<c:if test="${sessionScope.memberType ne 'admin'}">
+					<a href="javascript:void(0)" class="header__button" style="padding: 15px 10px 15px 28px;">
+						Menu
+					</a>
+				</c:if>
+
+>>>>>>> 1ebebab... 유창오| 헤더 메뉴 리스트 수정, 메인페이지 관광지 border-radius값 수정
 				<c:if test="${sessionScope.ID eq null}">
 					<div class="header__content">
 						<a href="loginForm.do">SignIn</a>
@@ -34,10 +45,17 @@
 				</c:if>
 				<c:if test="${sessionScope.ID ne null}">
 					<div class="header__content">
+<<<<<<< HEAD
 						<a href="logout.do">logout</a>
 						<a href="signUpForm.do">MyInfo</a>
 						<c:if test="${sessionScope.memberType eq 'admin'}">
 							<a href="memberlist.do">memberlist</a>
+=======
+						<a href="logout.do">Signout</a>
+						<a href="myinfo.do">MyInfo</a>
+						<c:if test="${sessionScope.memberType eq 'admin'}">
+							<a href="memberlist.do">AdminPage</a>
+>>>>>>> 1ebebab... 유창오| 헤더 메뉴 리스트 수정, 메인페이지 관광지 border-radius값 수정
 						</c:if>
 					</div>
 				</c:if>
