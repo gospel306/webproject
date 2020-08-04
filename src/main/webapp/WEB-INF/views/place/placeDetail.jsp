@@ -349,8 +349,12 @@
 						</div>
 					</div>			
 					</c:forEach>
+<<<<<<< HEAD
 >>>>>>> dc7d6b8... 유창오| 사용자 리뷰 모달 버튼 크기 조정
 					<div class="review">
+=======
+					<%-- <div class="review">
+>>>>>>> f6a0b94... 유창오| 메인 페이지 필터링 옵션 버튼화, 리뷰 작성 페이지 star rating border  설정
 						<div class="review__left">
 							<span>
 								<strong>박한범</strong>님
@@ -396,6 +400,10 @@
 								</div>
 							</div>
 						</div>
+<<<<<<< HEAD
+=======
+					</div> --%>
+>>>>>>> f6a0b94... 유창오| 메인 페이지 필터링 옵션 버튼화, 리뷰 작성 페이지 star rating border  설정
 				</div>
 			</div>
 

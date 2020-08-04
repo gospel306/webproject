@@ -126,7 +126,7 @@
         <div class="main" ">
             <form class="inputForm">
                 <h3>현충원에 대한 후기 작성하기</h3>
-                <div class="stars" style="border: 1px solid black;">
+                <div class="stars">
                     <input type="radio" name="star" class="star-1" id="star-1" value="1" required />
                     <label class="star-1" for="star-1" onclick="setRatingText('최악이에요!');">1</label>
                     <input type="radio" name="star" class="star-2" id="star-2" value="2" />
