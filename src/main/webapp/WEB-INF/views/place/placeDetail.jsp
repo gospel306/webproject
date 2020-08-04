@@ -10,7 +10,10 @@
 =======
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
+<<<<<<< HEAD
 >>>>>>> e3efd00... 유창오| main, placeDetail 디자인 사소한 수정
+=======
+>>>>>>> 6631efa... 유창오| 사용자 리뷰 목록에 별점 정보 추가
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Awesome Place</title>
@@ -92,6 +95,18 @@
 					<div class="mainHeader__left">
 						<h1>${tourInfo.title }</h1>
 					</div>
+<<<<<<< HEAD
+=======
+					<div>
+						<c:if test="${sessionScope.memberType eq 'admin'}">
+							<i class="fas fa-cog my__icon"
+								onclick="location.href='bfupdateplace.do?contentid=${tourInfo.contentId}&contenttypeid=${tourInfo.contentTypeId}'"></i>
+							<i class="fas fa-trash-alt my__icon"
+								onclick="location.href='deleteTour.do?id=${tourInfo.contentId}'">삭제</i>
+						</c:if>
+					</div>
+
+>>>>>>> 6631efa... 유창오| 사용자 리뷰 목록에 별점 정보 추가
 					<div class="mainHeader__right rate">
 						<h1>${star}</h1>
 					</div>
@@ -115,10 +130,13 @@
 
 				<div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 					<a>
 						<i class="far fa-edit"></i>
 						<span class="icon_text">후기작성</span>
 =======
+=======
+>>>>>>> 6631efa... 유창오| 사용자 리뷰 목록에 별점 정보 추가
 					<c:if test="${empty ID}">
 						<a onClick='nosess()'>
 							<i class="far fa-edit"></i>
@@ -133,7 +151,10 @@
 						</a>
 
 					</c:if>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6631efa... 유창오| 사용자 리뷰 목록에 별점 정보 추가
 					<a onClick='share(); return false'>
 
 
@@ -143,6 +164,7 @@
 
 				<div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 					<a>
 						<i class="fas fa-share-alt-square"></i>
 						<span class="icon_text">공유하기</span>
@@ -151,6 +173,11 @@
 					<div id="sharebutton">
 						<i class="fas fa-share-alt-square"></i>
 						<span class="icon_text">공유하기</span>
+=======
+					<div id="sharebutton">
+						<i class="fas fa-share-alt-square"></i>
+						<span class="icon_text">공유하기</span>
+>>>>>>> 6631efa... 유창오| 사용자 리뷰 목록에 별점 정보 추가
 					</div>
 					<div id="sharehide" style="display:none,">
 						<span class="sociallink ml-1" style="text-decoration:none">
@@ -182,7 +209,10 @@
 				</div>
 			</div>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6631efa... 유창오| 사용자 리뷰 목록에 별점 정보 추가
 			<div>
 				<div class="info_header">
 					<div class="header__left">
@@ -427,6 +457,7 @@
 =======
 					<c:forEach var="review" items="${reviews}">
 <<<<<<< HEAD
+<<<<<<< HEAD
 					<div class="review">
 						<div class="review__left">
 							<span>
@@ -436,25 +467,48 @@
 						<div class="review__right" id="open" style="cursor: pointer">
 							<div class="review__content" style="float: left;">
 								<span>${review.content}</span>
+=======
+						<div class="review">
+							<div class="review__left">
+								<span>
+									<strong>${review.name}</strong>님
+								</span>
+>>>>>>> 6631efa... 유창오| 사용자 리뷰 목록에 별점 정보 추가
 							</div>
-							<div style="float: right; margin-top: 5px;">
-								<span style="font-weight: 200; font-size: 12px;">${review.time_Stamp}에 방문했습니다.</span>
-							</div>
-						</div>
-					</div>
-					<div class="modal-wrapper" style="display: none;">
-						<div class="modal">
-							<div class="modal-title">
-								<h3 style="margin-bottom: 2px;">${review.name}님의 현충원 후기</h3>
-								<span style="display: block; font-size: 12px; color: darkgray; margin: 0;">${review.time_Stamp}에 방문했습니다.</span>
-								<p>${review.content}</p>
-
-								<div class="close-wrapper">
-									<span id="close">닫기</span>
+							<div class="review__right" id="open" style="cursor: pointer">
+								<div class="review__content" style="float: left;">
+									<span>${review.content}</span>
+								</div>
+								<div style="float: right; margin-top: 5px; text-align: right;">
+									<span style="display: block;">
+										<c:if test="${review.star ne ''}">
+											<c:forEach begin="1" end="${review.star }">
+												<img style="width: 5%;" class="card__star"
+													src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA0MjYuNjY3IDQyNi42NjciIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQyNi42NjcgNDI2LjY2NzsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTJweCIgaGVpZ2h0PSI1MTJweCI+Cjxwb2x5Z29uIHN0eWxlPSJmaWxsOiNGQUM5MTc7IiBwb2ludHM9IjIxMy4zMzMsMTAuNDQxIDI3OS4yNDksMTQ0LjAxNyA0MjYuNjY3LDE2NS40MzYgMzIwLDI2OS40MSAzNDUuMTczLDQxNi4yMjYgMjEzLjMzMywzNDYuOTEgICA4MS40ODUsNDE2LjIyNiAxMDYuNjY3LDI2OS40MSAwLDE2NS40MzYgMTQ3LjQwOSwxNDQuMDE3ICIvPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
+											</c:forEach>
+										</c:if>
+									</span>
+									<span style="font-weight: 200; font-size: 12px;">
+										${review.time_Stamp}에 방문했습니다.
+									</span>
 								</div>
 							</div>
 						</div>
-					</div>			
+						<div class="modal-wrapper" style="display: none;">
+							<div class="modal">
+								<div class="modal-title">
+									<h3 style="margin-bottom: 2px;">${review.name}님의 현충원 후기</h3>
+									<span style="display: block; font-size: 12px; color: darkgray; margin: 0;">
+										${review.time_Stamp}에 방문했습니다.
+									</span>
+									<p>${review.content}</p>
+
+									<div class="close-wrapper">
+										<span id="close">닫기</span>
+									</div>
+								</div>
+							</div>
+						</div>
 					</c:forEach>
 <<<<<<< HEAD
 >>>>>>> dc7d6b8... 유창오| 사용자 리뷰 모달 버튼 크기 조정
@@ -575,6 +629,7 @@
 				</div>
 			</div>
 		</div>
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 =======
@@ -721,6 +776,139 @@
 			}
 		</script>
 >>>>>>> e3efd00... 유창오| main, placeDetail 디자인 사소한 수정
+=======
+	</div>
+
+
+	<script type="text/javascript"
+		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0128abab124ce04ae17c622f465a5647&libraries=services,clusterer">
+		</script>
+	<script>
+		//주소-좌표 변환 객체를 생성합니다
+		var geocoder = new kakao.maps.services.Geocoder();
+		var infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
+		var container = document.getElementById('map');
+		var options = {
+			center: new kakao.maps.LatLng("${tourInfo.mapy}", "${tourInfo.mapx}"),
+			level: 6
+		};
+		var map = new kakao.maps.Map(container, options);
+		var clusterer = new kakao.maps.MarkerClusterer({
+			map: map, // 마커들을 클러스터로 관리하고 표시할 지도 객체 
+			averageCenter: true, // 클러스터에 포함된 마커들의 평균 위치를 클러스터 마커 위치로 설정 
+			minLevel: 10 // 클러스터 할 최소 지도 레벨 
+		});
+		var marker = new kakao.maps.Marker({
+			position: new kakao.maps.LatLng("${tourInfo.mapy}", "${tourInfo.mapx}")
+		});
+
+		clusterer.addMarker(marker);
+		// 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
+		infowindow.setContent('<div style="padding:5px;font-size:12px;">' + "${tourInfo.title}" + '</div>');
+		infowindow.open(map, marker);
+	</script>
+	<script>
+		// 사용자 리뷰 모달창 열기
+		const open = document.getElementById("open");
+		const close = document.getElementById("close");
+		const modal = document.querySelector(".modal-wrapper");
+		open.onclick = () => {
+			modal.style.display = "flex";
+		};
+		close.onclick = () => {
+			modal.style.display = "none";
+		};
+		function nosess() {
+			alert("로그인 후 이용해주세요!");
+		}
+		//------------------------------------------------------
+		function dib() {
+			$.ajax({
+				type: "GET", //전송방식을 지정한다 (POST,GET)
+				url: "changeDib.do?contentId=" + "${tourInfo.contentId}",//호출 URL을 설정한다. GET방식일경우 뒤에 파라티터를 붙여서 사용해도된다.
+
+				dataType: "text",//호출한 페이지의 형식이다. xml,json,html,text등의 여러 방식을 사용할 수 있다.
+				error: function () {
+					alert("읭이잉?");
+				},
+				success: function (result) {
+					if (result == "true") {
+						alert("찜한 목록에 추가되었습니다!");
+						tmp = "<a onClick='dib(); return false'><i class='fas fa-heart'></i><span class='icon_text'>가고싶어요</span>"
+					} else {
+						alert("찜한 목록에서 제거되었습니다!");
+						tmp = "<a onClick='dib(); return false'><i class='far fa-heart'></i></i><span class='icon_text'>가고싶어요</span>"
+					}
+					//var check=${check_dib};
+					$("#dib").html(tmp);
+				}
+			});
+		}
+		function searchDetailAddrFromCoords(coords, callback) {
+			// 좌표로 법정동 상세 주소 정보를 요청합니다
+			geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
+		}
+		function findWay() {
+
+			var latlng = new kakao.maps.LatLng(${ tourInfo.mapy }, ${ tourInfo.mapx });
+			searchDetailAddrFromCoords(latlng, function (result, status) {
+				var detailAddr = result[0].address.address_name + "";
+				window.open("https://map.kakao.com/?sName=${address}&eName=" + detailAddr);
+			});
+		}
+	</script>
+	<script>
+		// 처음 열었으 때 숨김 표시
+		$(document).ready(function () {
+			$("#sharehide").toggle();
+		});
+		// 클릭시 숨김과 보여줌을 반복
+		$(function () {
+			$("#sharebutton").click(function () {
+				$("#sharehide").toggle();
+			});
+		});
+
+		function sendLinkFacebook() {
+			var raw_url = window.location.href;
+			var Facebook_root_url = "https://www.facebook.com/sharer/sharer.php?u=";
+			var Facebook_share_url = Facebook_root_url + encodeURI(raw_url);
+			window.open(Facebook_share_url,
+				'Share on Facebook',
+				'scrollbars=no, width=500, height=500');
+		}
+		function sendLinkTwitter() {
+			var raw_url = "{{ request.path }}";
+			var raw_title = "{{ post.title }}"
+			var twitter_root_url = "https://twitter.com/share?url="
+			var twitter_share_url = twitter_root_url + encodeURI(raw_url) + "&title=" + encodeURI(raw_title);
+			window.open(twitter_share_url,
+				'Share on twitter',
+				'scrollbars=no, width=500, height=500');
+		}
+		function sendLinkNaver() {
+			var raw_url = "{{ request.path }}";
+			var raw_title = "{{ post.title }}"
+			var naver_root_url = "http://share.naver.com/web/shareView.nhn?url="
+			var naver_share_url = naver_root_url + encodeURI(raw_url) + "&title=" + encodeURI(raw_title);
+			window.open(naver_share_url,
+				'Share on Naver',
+				'scrollbars=no, width=500, height=500');
+		}
+		function sendLinkKakao() {
+			console.log(1)
+			var raw_url = window.location.href;
+			var Kakao_root_url = "https://story.kakao.com/share?url=";
+			var Kakao_share_url = Kakao_root_url + encodeURI(raw_url);
+			window.open(Kakao_share_url,
+				'Share on Kakao',
+				'scrollbars=no, width=500, height=500');
+		}
+		function goReviewCreate() {
+			location.href = "createReview.do?id=" + ${ tourInfo.contentId };
+		}
+	</script>
+>>>>>>> 6631efa... 유창오| 사용자 리뷰 목록에 별점 정보 추가
 </body>
 
 </html>
